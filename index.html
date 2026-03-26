@@ -229,20 +229,72 @@
     </div>
   </section>
 
-  <!-- CTA FINAL -->
+  <!-- CTA FINAL + FORM -->
   <section id="contacto" class="py-24 px-6 bg-[#3B82F6]">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="poppins font-bold text-4xl md:text-5xl text-white mb-6 leading-tight">
-        ¿Tu operación de revenue<br>está lista para escalar?
-      </h2>
-      <p class="text-blue-100 text-xl mb-10 leading-relaxed">
-        Empezamos con un diagnóstico. Sin compromiso, sin propuesta genérica — con una conversación real sobre tu negocio.
-      </p>
-      <a href="mailto:hola@gropera.com" class="inline-block bg-white text-[#3B82F6] px-10 py-4 rounded-lg poppins font-semibold text-lg hover:bg-blue-50 transition-colors">
-        Hablemos de tu operación →
-      </a>
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="poppins font-bold text-4xl md:text-5xl text-white mb-6 leading-tight">
+          ¿Tu operación de revenue<br>está lista para escalar?
+        </h2>
+        <p class="text-blue-100 text-xl leading-relaxed">
+          Empezamos con un diagnóstico. Sin compromiso, sin propuesta genérica — con una conversación real sobre tu negocio.
+        </p>
+      </div>
+      <form class="bg-white rounded-2xl p-8 md:p-12 max-w-2xl mx-auto" onsubmit="handleSubmit(event)">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <label class="block text-sm font-medium text-[#1F2937] mb-2" for="nombre">Nombre y Apellido</label>
+            <input type="text" id="nombre" name="nombre" required
+              class="w-full border border-gray-200 rounded-lg px-4 py-3 text-[#1F2937] text-sm focus:outline-none focus:border-[#3B82F6] transition-colors"
+              placeholder="Juan García">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-[#1F2937] mb-2" for="empresa">Empresa</label>
+            <input type="text" id="empresa" name="empresa" required
+              class="w-full border border-gray-200 rounded-lg px-4 py-3 text-[#1F2937] text-sm focus:outline-none focus:border-[#3B82F6] transition-colors"
+              placeholder="Tu empresa">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-[#1F2937] mb-2" for="mail">Mail</label>
+            <input type="email" id="mail" name="mail" required
+              class="w-full border border-gray-200 rounded-lg px-4 py-3 text-[#1F2937] text-sm focus:outline-none focus:border-[#3B82F6] transition-colors"
+              placeholder="juan@empresa.com">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-[#1F2937] mb-2" for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono"
+              class="w-full border border-gray-200 rounded-lg px-4 py-3 text-[#1F2937] text-sm focus:outline-none focus:border-[#3B82F6] transition-colors"
+              placeholder="+54 11 1234 5678">
+          </div>
+        </div>
+        <button type="submit"
+          class="w-full bg-[#3B82F6] text-white py-4 rounded-lg poppins font-semibold text-lg hover:bg-blue-600 transition-colors">
+          Hablemos de tu operación →
+        </button>
+        <div id="form-success" class="hidden mt-4 text-center text-[#3B82F6] font-medium poppins">
+          ¡Mensaje recibido! Te contactamos pronto.
+        </div>
+      </form>
     </div>
   </section>
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      fetch('https://formsubmit.co/ajax/hola@gropera.com', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: data
+      }).then(() => {
+        form.reset();
+        document.getElementById('form-success').classList.remove('hidden');
+      }).catch(() => {
+        document.getElementById('form-success').textContent = 'Hubo un error. Escribinos a hola@gropera.com';
+        document.getElementById('form-success').classList.remove('hidden');
+      });
+    }
+  </script>
 
   <!-- FOOTER -->
   <footer class="py-10 px-6 border-t border-gray-100">
