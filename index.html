@@ -7,158 +7,273 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     * { font-family: 'Inter', sans-serif; }
-    h1, h2, h3, h4, .poppins { font-family: 'Poppins', sans-serif; }
+    .mono { font-family: 'JetBrains Mono', monospace; }
     html { scroll-behavior: smooth; }
+    body { background: #0A0A0A; color: #EDEDED; }
+
+    .glow-blue {
+      background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(59,130,246,0.12) 0%, transparent 70%);
+    }
+    .glow-card:hover {
+      box-shadow: 0 0 0 1px #3B82F6, 0 0 24px rgba(59,130,246,0.08);
+    }
+    .hero-glow {
+      background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(59,130,246,0.08) 0%, transparent 70%);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #EDEDED 0%, #A1A1AA 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    input, textarea {
+      background: #171717;
+      border: 1px solid #262626;
+      color: #EDEDED;
+      transition: border-color 0.2s;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #3B82F6;
+    }
+    input::placeholder, textarea::placeholder {
+      color: #A1A1AA;
+    }
+    .dash-card {
+      background: #171717;
+      border: 1px solid #262626;
+      border-radius: 12px;
+    }
   </style>
 </head>
-<body class="bg-white text-[#1F2937]">
+<body>
 
   <!-- NAV -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b" style="background: rgba(10,10,10,0.85); backdrop-filter: blur(12px); border-color: #262626;">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2">
-        <img src="../assets/gropera-logo.png" alt="Grópera" class="h-8" onerror="this.style.display='none'">
-        <span class="poppins font-bold text-xl text-[#1F2937]">Grópera</span>
+      <a href="#" class="flex items-center gap-2.5">
+        <img src="../assets/gropera-logo.png" alt="Grópera" class="h-7" onerror="this.style.display='none'">
+        <span style="font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; color: #EDEDED;">Grópera</span>
       </a>
-      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-500">
-        <a href="#servicios" class="hover:text-[#3B82F6] transition-colors">Servicios</a>
-        <a href="#como-trabajamos" class="hover:text-[#3B82F6] transition-colors">Cómo trabajamos</a>
-        <a href="#por-que" class="hover:text-[#3B82F6] transition-colors">Por qué Grópera</a>
-        <a href="#contacto" class="bg-[#3B82F6] text-white px-5 py-2 rounded-lg hover:bg-blue-600 transition-colors">Hablemos →</a>
+      <div class="hidden md:flex items-center gap-8" style="font-size: 0.875rem; color: #A1A1AA;">
+        <a href="#servicios" class="hover:text-white transition-colors">Servicios</a>
+        <a href="#como-trabajamos" class="hover:text-white transition-colors">Cómo trabajamos</a>
+        <a href="#por-que" class="hover:text-white transition-colors">Por qué Grópera</a>
+        <a href="#contacto" class="px-4 py-2 rounded-lg text-white font-medium transition-all hover:opacity-90" style="background: #3B82F6; font-size: 0.875rem;">Hablemos →</a>
       </div>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section class="pt-36 pb-28 px-6">
-    <div class="max-w-4xl mx-auto text-center">
-      <h1 class="poppins font-bold text-5xl md:text-6xl text-[#1F2937] leading-tight mb-6">
-        El crecimiento no se improvisa.<br>Se opera.
-      </h1>
-      <p class="text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
-        Diseñamos e implementamos sistemas de Growth y Revenue Operations para que marketing, ventas y customer success generen ingresos predecibles — sin depender de la improvisación.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#contacto" class="bg-[#3B82F6] text-white px-8 py-4 rounded-lg poppins font-semibold text-lg hover:bg-blue-600 transition-colors">
-          Hablemos de tu operación →
-        </a>
-        <a href="#como-trabajamos" class="border border-gray-200 text-[#1F2937] px-8 py-4 rounded-lg poppins font-semibold text-lg hover:border-[#3B82F6] hover:text-[#3B82F6] transition-colors">
-          Ver cómo trabajamos
-        </a>
+  <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <div class="hero-glow absolute inset-0 pointer-events-none"></div>
+    <div class="max-w-6xl mx-auto px-6 w-full py-24">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+        <!-- Left -->
+        <div>
+          <div class="mono text-xs mb-6 flex items-center gap-3" style="color: #3B82F6; letter-spacing: 0.08em;">
+            <span class="w-4 h-px" style="background: #3B82F6;"></span>
+            GROWTH OPS / REVENUE OPS
+          </div>
+          <h1 style="font-size: clamp(2.5rem, 5vw, 3.75rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.03em;" class="mb-6">
+            El crecimiento<br>no se improvisa.<br>
+            <span style="color: #A1A1AA;">Se opera.</span>
+          </h1>
+          <p style="color: #A1A1AA; font-size: 1.125rem; line-height: 1.7; max-width: 440px;" class="mb-10">
+            Diseñamos e implementamos sistemas de Growth y Revenue Operations para que marketing, ventas y customer success generen ingresos predecibles.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="#contacto" class="px-7 py-3.5 rounded-lg font-semibold text-white transition-all hover:opacity-90 text-center" style="background: #3B82F6; letter-spacing: -0.01em;">
+              Hablemos de tu operación →
+            </a>
+            <a href="#como-trabajamos" class="px-7 py-3.5 rounded-lg font-medium text-center transition-all hover:border-white" style="border: 1px solid #262626; color: #A1A1AA; letter-spacing: -0.01em;">
+              Ver cómo trabajamos
+            </a>
+          </div>
+        </div>
+
+        <!-- Right — abstract visual -->
+        <div class="hidden lg:block relative">
+          <div class="relative" style="height: 420px;">
+
+            <!-- Main card -->
+            <div class="dash-card p-6 absolute top-0 right-0" style="width: 340px;">
+              <div class="mono text-xs mb-4" style="color: #A1A1AA;">revenue_ops.status</div>
+              <div class="space-y-3">
+                <div class="flex items-center justify-between">
+                  <span style="color: #A1A1AA; font-size: 0.8rem;">Pipeline unificado</span>
+                  <span class="mono text-xs px-2 py-0.5 rounded" style="background: rgba(59,130,246,0.1); color: #3B82F6;">activo</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span style="color: #A1A1AA; font-size: 0.8rem;">Handoffs automatizados</span>
+                  <span class="mono text-xs px-2 py-0.5 rounded" style="background: rgba(59,130,246,0.1); color: #3B82F6;">activo</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span style="color: #A1A1AA; font-size: 0.8rem;">Silos eliminados</span>
+                  <span class="mono text-xs px-2 py-0.5 rounded" style="background: rgba(59,130,246,0.1); color: #3B82F6;">activo</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span style="color: #A1A1AA; font-size: 0.8rem;">Revenue predecible</span>
+                  <span class="mono text-xs px-2 py-0.5 rounded" style="background: rgba(59,130,246,0.1); color: #3B82F6;">activo</span>
+                </div>
+              </div>
+              <div class="mt-5 pt-4" style="border-top: 1px solid #262626;">
+                <div class="mono text-xs mb-2" style="color: #A1A1AA;">mrr.growth</div>
+                <div class="flex items-end gap-1 h-10">
+                  <div class="rounded-sm w-3" style="height: 30%; background: #262626;"></div>
+                  <div class="rounded-sm w-3" style="height: 45%; background: #262626;"></div>
+                  <div class="rounded-sm w-3" style="height: 40%; background: #262626;"></div>
+                  <div class="rounded-sm w-3" style="height: 60%; background: #3B82F6; opacity: 0.4;"></div>
+                  <div class="rounded-sm w-3" style="height: 55%; background: #3B82F6; opacity: 0.5;"></div>
+                  <div class="rounded-sm w-3" style="height: 75%; background: #3B82F6; opacity: 0.7;"></div>
+                  <div class="rounded-sm w-3" style="height: 90%; background: #3B82F6;"></div>
+                  <div class="rounded-sm w-3" style="height: 100%; background: #3B82F6;"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Secondary card -->
+            <div class="dash-card p-5 absolute bottom-8 left-0" style="width: 220px;">
+              <div class="mono text-xs mb-3" style="color: #A1A1AA;">conversion_rate</div>
+              <div style="font-size: 2rem; font-weight: 700; letter-spacing: -0.03em; color: #EDEDED;">+34%</div>
+              <div style="font-size: 0.75rem; color: #3B82F6;" class="mono mt-1">↑ post-implementación</div>
+            </div>
+
+            <!-- Glow behind main card -->
+            <div class="absolute top-10 right-10 w-40 h-40 rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%); filter: blur(20px);"></div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
   <!-- PROBLEM -->
-  <section class="py-24 px-6 bg-[#1F2937]">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="poppins font-bold text-3xl md:text-4xl text-white mb-14">
+  <section class="py-24 px-6" style="border-top: 1px solid #262626;">
+    <div class="max-w-5xl mx-auto">
+      <div class="mono text-xs mb-6 flex items-center gap-3" style="color: #3B82F6; letter-spacing: 0.08em;">
+        <span class="w-4 h-px" style="background: #3B82F6;"></span>
+        EL PROBLEMA
+      </div>
+      <h2 style="font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; letter-spacing: -0.03em; max-width: 600px;" class="mb-14">
         Lo que pasa cuando el crecimiento no tiene sistema
       </h2>
-      <ul class="space-y-6">
-        <li class="flex items-start gap-5">
-          <span class="w-2 h-2 rounded-full bg-[#3B82F6] mt-2.5 flex-shrink-0"></span>
-          <p class="text-gray-300 text-lg leading-relaxed">Marketing genera leads. Ventas no los trabaja igual. Customer success no sabe qué se prometió.</p>
-        </li>
-        <li class="flex items-start gap-5">
-          <span class="w-2 h-2 rounded-full bg-[#3B82F6] mt-2.5 flex-shrink-0"></span>
-          <p class="text-gray-300 text-lg leading-relaxed">Los resultados del mes dependen de quién estaba disponible, no de un proceso que funciona solo.</p>
-        </li>
-        <li class="flex items-start gap-5">
-          <span class="w-2 h-2 rounded-full bg-[#3B82F6] mt-2.5 flex-shrink-0"></span>
-          <p class="text-gray-300 text-lg leading-relaxed">Tienes datos. No tienes claridad sobre qué los mueve.</p>
-        </li>
-        <li class="flex items-start gap-5">
-          <span class="w-2 h-2 rounded-full bg-[#3B82F6] mt-2.5 flex-shrink-0"></span>
-          <p class="text-gray-300 text-lg leading-relaxed">Cada área tiene sus métricas. Nadie tiene una visión de revenue unificada.</p>
-        </li>
-        <li class="flex items-start gap-5">
-          <span class="w-2 h-2 rounded-full bg-[#3B82F6] mt-2.5 flex-shrink-0"></span>
-          <p class="text-gray-300 text-lg leading-relaxed">Contrataste más gente. El problema no desapareció — solo se hizo más caro.</p>
-        </li>
-      </ul>
-      <div class="mt-14 pt-10 border-t border-gray-700">
-        <p class="poppins font-semibold text-white text-xl">
-          No es un problema de esfuerzo. Es un problema de estructura.
-        </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="dash-card p-6 glow-card transition-all">
+          <div style="color: #3B82F6; font-size: 1.25rem; margin-bottom: 12px;">—</div>
+          <p style="color: #A1A1AA; line-height: 1.6; font-size: 0.9rem;">Marketing genera leads. Ventas no los trabaja igual. Customer success no sabe qué se prometió.</p>
+        </div>
+        <div class="dash-card p-6 glow-card transition-all">
+          <div style="color: #3B82F6; font-size: 1.25rem; margin-bottom: 12px;">—</div>
+          <p style="color: #A1A1AA; line-height: 1.6; font-size: 0.9rem;">Los resultados del mes dependen de quién estaba disponible, no de un proceso que funciona solo.</p>
+        </div>
+        <div class="dash-card p-6 glow-card transition-all">
+          <div style="color: #3B82F6; font-size: 1.25rem; margin-bottom: 12px;">—</div>
+          <p style="color: #A1A1AA; line-height: 1.6; font-size: 0.9rem;">Tienes datos. No tienes claridad sobre qué los mueve.</p>
+        </div>
+        <div class="dash-card p-6 glow-card transition-all">
+          <div style="color: #3B82F6; font-size: 1.25rem; margin-bottom: 12px;">—</div>
+          <p style="color: #A1A1AA; line-height: 1.6; font-size: 0.9rem;">Cada área tiene sus métricas. Nadie tiene una visión de revenue unificada.</p>
+        </div>
+        <div class="dash-card p-6 glow-card transition-all">
+          <div style="color: #3B82F6; font-size: 1.25rem; margin-bottom: 12px;">—</div>
+          <p style="color: #A1A1AA; line-height: 1.6; font-size: 0.9rem;">Contrataste más gente. El problema no desapareció — solo se hizo más caro.</p>
+        </div>
+        <div class="dash-card p-6 flex items-end" style="background: transparent; border: 1px solid #262626;">
+          <p style="font-weight: 600; letter-spacing: -0.02em; font-size: 0.95rem; color: #EDEDED;">No es un problema de esfuerzo. Es un problema de estructura.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- SERVICES -->
-  <section id="servicios" class="py-24 px-6">
+  <section id="servicios" class="py-24 px-6" style="border-top: 1px solid #262626;">
     <div class="max-w-6xl mx-auto">
-      <div class="mb-16">
-        <h2 class="poppins font-bold text-3xl md:text-4xl text-[#1F2937] mb-3">Lo que hacemos</h2>
-        <p class="text-gray-500 text-lg">Cada servicio es una palanca. Juntos, forman el sistema completo.</p>
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+        <div>
+          <div class="mono text-xs mb-4 flex items-center gap-3" style="color: #3B82F6; letter-spacing: 0.08em;">
+            <span class="w-4 h-px" style="background: #3B82F6;"></span>
+            SERVICIOS
+          </div>
+          <h2 style="font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; letter-spacing: -0.03em;">Lo que hacemos</h2>
+        </div>
+        <p style="color: #A1A1AA; font-size: 0.9rem; max-width: 280px; line-height: 1.6;">Cada servicio es una palanca. Juntos, forman el sistema completo.</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 
-        <div class="border border-gray-100 rounded-xl p-7 hover:border-[#3B82F6] hover:shadow-sm transition-all group">
-          <div class="w-9 h-9 bg-blue-50 rounded-lg flex items-center justify-center mb-5">
-            <span class="text-[#3B82F6] poppins font-bold text-sm">01</span>
+        <div class="dash-card p-7 glow-card transition-all">
+          <div class="mono text-xs mb-5 flex items-center justify-between" style="color: #A1A1AA;">
+            <span>01</span>
+            <span style="color: #262626;">///</span>
           </div>
-          <h3 class="poppins font-semibold text-lg mb-3">Estrategia de Growth & Revenue</h3>
-          <p class="text-gray-500 text-sm leading-relaxed mb-4">Antes de ejecutar, hay que saber dónde crecer, cómo y con qué prioridades. Alineamos modelo de negocio, go-to-market, métricas y capacidades internas para que el crecimiento sea ejecutable — no aspiracional.</p>
-          <p class="text-xs text-gray-400">Diagnóstico integral · Palancas de crecimiento · ICP · Roadmap · Métricas</p>
+          <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Estrategia de Growth & Revenue</h3>
+          <p style="color: #A1A1AA; font-size: 0.85rem; line-height: 1.7; margin-bottom: 14px;">Antes de ejecutar, hay que saber dónde crecer, cómo y con qué prioridades. Alineamos modelo de negocio, go-to-market, métricas y capacidades internas.</p>
+          <p class="mono text-xs" style="color: #3B82F6;">diagnóstico · palancas · roadmap</p>
         </div>
 
-        <div class="border border-gray-100 rounded-xl p-7 hover:border-[#3B82F6] hover:shadow-sm transition-all group">
-          <div class="w-9 h-9 bg-blue-50 rounded-lg flex items-center justify-center mb-5">
-            <span class="text-[#3B82F6] poppins font-bold text-sm">02</span>
+        <div class="dash-card p-7 glow-card transition-all">
+          <div class="mono text-xs mb-5 flex items-center justify-between" style="color: #A1A1AA;">
+            <span>02</span>
+            <span style="color: #262626;">///</span>
           </div>
-          <h3 class="poppins font-semibold text-lg mb-3">Growth Ops & Revenue Operations</h3>
-          <p class="text-gray-500 text-sm leading-relaxed mb-4">Eliminamos los silos entre marketing, ventas y customer success. Diseñamos e implementamos los procesos, automatizaciones y métricas que convierten el crecimiento en una operación diaria orientada a ingresos.</p>
-          <p class="text-xs text-gray-400">Funnels end-to-end · Procesos · Automatizaciones · Handoffs · Métricas</p>
+          <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Growth Ops & Revenue Operations</h3>
+          <p style="color: #A1A1AA; font-size: 0.85rem; line-height: 1.7; margin-bottom: 14px;">Eliminamos los silos entre marketing, ventas y customer success. Diseñamos e implementamos los procesos y automatizaciones que convierten el crecimiento en operación diaria.</p>
+          <p class="mono text-xs" style="color: #3B82F6;">funnels · procesos · automatizaciones</p>
         </div>
 
-        <div class="border border-gray-100 rounded-xl p-7 hover:border-[#3B82F6] hover:shadow-sm transition-all group">
-          <div class="w-9 h-9 bg-blue-50 rounded-lg flex items-center justify-center mb-5">
-            <span class="text-[#3B82F6] poppins font-bold text-sm">03</span>
+        <div class="dash-card p-7 glow-card transition-all">
+          <div class="mono text-xs mb-5 flex items-center justify-between" style="color: #A1A1AA;">
+            <span>03</span>
+            <span style="color: #262626;">///</span>
           </div>
-          <h3 class="poppins font-semibold text-lg mb-3">Go-to-Market & Adquisición</h3>
-          <p class="text-gray-500 text-sm leading-relaxed mb-4">Posicionamiento claro, canales priorizados, mensajes que conectan con el ICP. Sin dispersión, sin experimentación aleatoria.</p>
-          <p class="text-xs text-gray-400">Posicionamiento · Buyer personas · Customer journeys · Canales</p>
+          <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Go-to-Market & Adquisición</h3>
+          <p style="color: #A1A1AA; font-size: 0.85rem; line-height: 1.7; margin-bottom: 14px;">Posicionamiento claro, canales priorizados, mensajes que conectan con el ICP. Sin dispersión, sin experimentación aleatoria.</p>
+          <p class="mono text-xs" style="color: #3B82F6;">posicionamiento · canales · messaging</p>
         </div>
 
-        <div class="border border-gray-100 rounded-xl p-7 hover:border-[#3B82F6] hover:shadow-sm transition-all group">
-          <div class="w-9 h-9 bg-blue-50 rounded-lg flex items-center justify-center mb-5">
-            <span class="text-[#3B82F6] poppins font-bold text-sm">04</span>
+        <div class="dash-card p-7 glow-card transition-all">
+          <div class="mono text-xs mb-5 flex items-center justify-between" style="color: #A1A1AA;">
+            <span>04</span>
+            <span style="color: #262626;">///</span>
           </div>
-          <h3 class="poppins font-semibold text-lg mb-3">Optimización de Funnels, Conversión y Onboarding</h3>
-          <p class="text-gray-500 text-sm leading-relaxed mb-4">Identificamos dónde se cae el pipeline y por qué. Mejoramos conversión, activación y retención en cada punto de contacto.</p>
-          <p class="text-xs text-gray-400">Adquisición · Cierre · Activación · Onboarding · Retención</p>
+          <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Optimización de Funnels & Onboarding</h3>
+          <p style="color: #A1A1AA; font-size: 0.85rem; line-height: 1.7; margin-bottom: 14px;">Identificamos dónde se cae el pipeline y por qué. Mejoramos conversión, activación y retención en cada punto de contacto.</p>
+          <p class="mono text-xs" style="color: #3B82F6;">conversión · activación · retención</p>
         </div>
 
-        <div class="border border-gray-100 rounded-xl p-7 hover:border-[#3B82F6] hover:shadow-sm transition-all group">
-          <div class="w-9 h-9 bg-blue-50 rounded-lg flex items-center justify-center mb-5">
-            <span class="text-[#3B82F6] poppins font-bold text-sm">05</span>
+        <div class="dash-card p-7 glow-card transition-all">
+          <div class="mono text-xs mb-5 flex items-center justify-between" style="color: #A1A1AA;">
+            <span>05</span>
+            <span style="color: #262626;">///</span>
           </div>
-          <h3 class="poppins font-semibold text-lg mb-3">Pricing, Monetización & Revenue Design</h3>
-          <p class="text-gray-500 text-sm leading-relaxed mb-4">Un producto bien monetizado crece más rápido. Diseñamos y ajustamos modelos de pricing que maximizan ingresos sin frenar la adopción.</p>
-          <p class="text-xs text-gray-400">Pricing · Planes · Upsell · Cross-sell · Expansión</p>
+          <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Pricing, Monetización & Revenue Design</h3>
+          <p style="color: #A1A1AA; font-size: 0.85rem; line-height: 1.7; margin-bottom: 14px;">Diseñamos y ajustamos modelos de pricing que maximizan ingresos sin frenar la adopción.</p>
+          <p class="mono text-xs" style="color: #3B82F6;">pricing · upsell · expansión</p>
         </div>
 
-        <div class="border border-gray-100 rounded-xl p-7 hover:border-[#3B82F6] hover:shadow-sm transition-all group">
-          <div class="w-9 h-9 bg-blue-50 rounded-lg flex items-center justify-center mb-5">
-            <span class="text-[#3B82F6] poppins font-bold text-sm">06</span>
+        <div class="dash-card p-7 glow-card transition-all">
+          <div class="mono text-xs mb-5 flex items-center justify-between" style="color: #A1A1AA;">
+            <span>06</span>
+            <span style="color: #262626;">///</span>
           </div>
-          <h3 class="poppins font-semibold text-lg mb-3">Stack Tecnológico, CRM & Automatización</h3>
-          <p class="text-gray-500 text-sm leading-relaxed mb-4">El CRM como núcleo. El stack como sistema. Seleccionamos, implementamos e integramos las herramientas correctas para que la operación sea medible, automatizada y escalable.</p>
-          <p class="text-xs text-gray-400">CRM · Arquitectura de datos · Automatizaciones · Integraciones · Reporting</p>
+          <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Stack Tecnológico, CRM & Automatización</h3>
+          <p style="color: #A1A1AA; font-size: 0.85rem; line-height: 1.7; margin-bottom: 14px;">El CRM como núcleo. El stack como sistema. Seleccionamos, implementamos e integramos las herramientas correctas.</p>
+          <p class="mono text-xs" style="color: #3B82F6;">crm · integraciones · reporting</p>
         </div>
 
-        <div class="border border-gray-100 rounded-xl p-7 hover:border-[#3B82F6] hover:shadow-sm transition-all md:col-span-2 lg:col-span-3">
-          <div class="lg:max-w-sm">
-            <div class="w-9 h-9 bg-blue-50 rounded-lg flex items-center justify-center mb-5">
-              <span class="text-[#3B82F6] poppins font-bold text-sm">07</span>
+        <div class="dash-card p-7 glow-card transition-all md:col-span-2 lg:col-span-3">
+          <div class="lg:max-w-lg">
+            <div class="mono text-xs mb-5 flex items-center justify-between" style="color: #A1A1AA;">
+              <span>07</span>
+              <span style="color: #262626;">///</span>
             </div>
-            <h3 class="poppins font-semibold text-lg mb-3">Métricas, Reporting y Analítica de Ingresos</h3>
-            <p class="text-gray-500 text-sm leading-relaxed mb-4">Sin datos claros, no hay decisiones buenas. Diseñamos el sistema de métricas y dashboards que te permite saber qué mueve los ingresos, dónde intervenir y cómo comunicarlo al equipo ejecutivo.</p>
-            <p class="text-xs text-gray-400">KPIs · Dashboards ejecutivos · Reporting operativo · Análisis de revenue</p>
+            <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Métricas, Reporting y Analítica de Ingresos</h3>
+            <p style="color: #A1A1AA; font-size: 0.85rem; line-height: 1.7; margin-bottom: 14px;">Sin datos claros, no hay decisiones buenas. Diseñamos el sistema de métricas y dashboards que te permite saber qué mueve los ingresos y dónde intervenir.</p>
+            <p class="mono text-xs" style="color: #3B82F6;">kpis · dashboards · análisis de revenue</p>
           </div>
         </div>
 
@@ -167,116 +282,137 @@
   </section>
 
   <!-- HOW WE WORK -->
-  <section id="como-trabajamos" class="py-24 px-6 bg-gray-50">
+  <section id="como-trabajamos" class="py-24 px-6" style="border-top: 1px solid #262626;">
     <div class="max-w-5xl mx-auto">
-      <h2 class="poppins font-bold text-3xl md:text-4xl text-[#1F2937] mb-16">Cómo trabajamos</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-        <div>
-          <div class="poppins font-bold text-6xl text-[#3B82F6] mb-6 leading-none">01</div>
-          <h3 class="poppins font-semibold text-xl mb-3">Diagnóstico</h3>
-          <p class="text-gray-500 leading-relaxed">Mapeamos tu operación de revenue actual: dónde está la fricción, dónde se pierde el ingreso, qué depende de quién.</p>
+      <div class="mono text-xs mb-6 flex items-center gap-3" style="color: #3B82F6; letter-spacing: 0.08em;">
+        <span class="w-4 h-px" style="background: #3B82F6;"></span>
+        PROCESO
+      </div>
+      <h2 style="font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; letter-spacing: -0.03em;" class="mb-16">Cómo trabajamos</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-px" style="background: #262626;">
+        <div class="p-8" style="background: #0A0A0A;">
+          <div class="mono mb-6" style="font-size: 3rem; font-weight: 500; color: #3B82F6; letter-spacing: -0.03em;">01</div>
+          <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Diagnóstico</h3>
+          <p style="color: #A1A1AA; font-size: 0.875rem; line-height: 1.7;">Mapeamos tu operación de revenue: dónde está la fricción, dónde se pierde el ingreso, qué depende de quién.</p>
         </div>
-        <div>
-          <div class="poppins font-bold text-6xl text-[#3B82F6] mb-6 leading-none">02</div>
-          <h3 class="poppins font-semibold text-xl mb-3">Diseño del sistema</h3>
-          <p class="text-gray-500 leading-relaxed">Definimos los procesos, métricas, tecnología y estructura de equipos que tu operación necesita para escalar.</p>
+        <div class="p-8" style="background: #0A0A0A;">
+          <div class="mono mb-6" style="font-size: 3rem; font-weight: 500; color: #3B82F6; letter-spacing: -0.03em;">02</div>
+          <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Diseño del sistema</h3>
+          <p style="color: #A1A1AA; font-size: 0.875rem; line-height: 1.7;">Definimos los procesos, métricas, tecnología y estructura de equipos que tu operación necesita para escalar.</p>
         </div>
-        <div>
-          <div class="poppins font-bold text-6xl text-[#3B82F6] mb-6 leading-none">03</div>
-          <h3 class="poppins font-semibold text-xl mb-3">Operación continua</h3>
-          <p class="text-gray-500 leading-relaxed">Implementamos, ejecutamos y ajustamos. No entregamos un manual — operamos el sistema con vos hasta que funciona solo.</p>
+        <div class="p-8" style="background: #0A0A0A;">
+          <div class="mono mb-6" style="font-size: 3rem; font-weight: 500; color: #3B82F6; letter-spacing: -0.03em;">03</div>
+          <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Operación continua</h3>
+          <p style="color: #A1A1AA; font-size: 0.875rem; line-height: 1.7;">Implementamos, ejecutamos y ajustamos. No entregamos un manual — operamos el sistema con vos hasta que funciona solo.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- WHY GROPERA -->
-  <section id="por-que" class="py-24 px-6">
+  <section id="por-que" class="py-24 px-6" style="border-top: 1px solid #262626;">
     <div class="max-w-5xl mx-auto">
-      <h2 class="poppins font-bold text-3xl md:text-4xl text-[#1F2937] mb-16">
-        Experiencia operando crecimiento —<br>no solo aconsejándolo
+      <div class="mono text-xs mb-6 flex items-center gap-3" style="color: #3B82F6; letter-spacing: 0.08em;">
+        <span class="w-4 h-px" style="background: #3B82F6;"></span>
+        POR QUÉ GRÓPERA
+      </div>
+      <h2 style="font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; letter-spacing: -0.03em; max-width: 500px;" class="mb-16">
+        Operamos el crecimiento. No solo lo aconsejamos.
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-        <div class="flex items-start gap-5">
-          <div class="w-1 bg-[#3B82F6] rounded-full flex-shrink-0 mt-1" style="min-height: 100%; height: auto; align-self: stretch;"></div>
-          <div>
-            <h3 class="poppins font-semibold text-lg mb-2">No entregamos estrategias. Operamos sistemas.</h3>
-            <p class="text-gray-500 leading-relaxed">La diferencia no es semántica. Una estrategia sin operación es una presentación. Nos quedamos hasta que el sistema funciona.</p>
-          </div>
+        <div>
+          <div style="width: 24px; height: 2px; background: #3B82F6; margin-bottom: 16px;"></div>
+          <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 8px;">No entregamos estrategias. Operamos sistemas.</h3>
+          <p style="color: #A1A1AA; font-size: 0.875rem; line-height: 1.7;">La diferencia no es semántica. Una estrategia sin operación es una presentación. Nos quedamos hasta que el sistema funciona.</p>
         </div>
-        <div class="flex items-start gap-5">
-          <div class="w-1 bg-[#3B82F6] rounded-full flex-shrink-0 mt-1" style="align-self: stretch;"></div>
-          <div>
-            <h3 class="poppins font-semibold text-lg mb-2">Trabajamos sobre la operación real, no sobre hipótesis.</h3>
-            <p class="text-gray-500 leading-relaxed">El diagnóstico parte de cómo funciona tu negocio hoy — procesos, datos, equipos. No de frameworks genéricos aplicados sin contexto.</p>
-          </div>
+        <div>
+          <div style="width: 24px; height: 2px; background: #3B82F6; margin-bottom: 16px;"></div>
+          <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 8px;">Trabajamos sobre la operación real, no sobre hipótesis.</h3>
+          <p style="color: #A1A1AA; font-size: 0.875rem; line-height: 1.7;">El diagnóstico parte de cómo funciona tu negocio hoy — procesos, datos, equipos. No de frameworks genéricos.</p>
         </div>
-        <div class="flex items-start gap-5">
-          <div class="w-1 bg-[#3B82F6] rounded-full flex-shrink-0 mt-1" style="align-self: stretch;"></div>
-          <div>
-            <h3 class="poppins font-semibold text-lg mb-2">Tres disciplinas, una operación.</h3>
-            <p class="text-gray-500 leading-relaxed">Growth, Revenue Ops y Go-to-Market no son servicios separados. Son partes de un mismo sistema. Así los trabajamos.</p>
-          </div>
+        <div>
+          <div style="width: 24px; height: 2px; background: #3B82F6; margin-bottom: 16px;"></div>
+          <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 8px;">Tres disciplinas, una operación.</h3>
+          <p style="color: #A1A1AA; font-size: 0.875rem; line-height: 1.7;">Growth, Revenue Ops y Go-to-Market no son servicios separados. Son partes de un mismo sistema. Así los trabajamos.</p>
         </div>
-        <div class="flex items-start gap-5">
-          <div class="w-1 bg-[#3B82F6] rounded-full flex-shrink-0 mt-1" style="align-self: stretch;"></div>
-          <div>
-            <h3 class="poppins font-semibold text-lg mb-2">Medimos lo que importa.</h3>
-            <p class="text-gray-500 leading-relaxed">No reportamos actividad. Reportamos impacto en revenue: conversión, retención, expansión y previsibilidad de ingresos.</p>
-          </div>
+        <div>
+          <div style="width: 24px; height: 2px; background: #3B82F6; margin-bottom: 16px;"></div>
+          <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 8px;">Medimos lo que importa.</h3>
+          <p style="color: #A1A1AA; font-size: 0.875rem; line-height: 1.7;">No reportamos actividad. Reportamos impacto en revenue: conversión, retención, expansión y previsibilidad de ingresos.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA FINAL + FORM -->
-  <section id="contacto" class="py-24 px-6 bg-[#3B82F6]">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-14">
-        <h2 class="poppins font-bold text-4xl md:text-5xl text-white mb-6 leading-tight">
-          ¿Tu operación de revenue<br>está lista para escalar?
-        </h2>
-        <p class="text-blue-100 text-xl leading-relaxed">
-          Empezamos con un diagnóstico. Sin compromiso, sin propuesta genérica — con una conversación real sobre tu negocio.
-        </p>
+  <!-- CTA + FORM -->
+  <section id="contacto" class="py-24 px-6 relative overflow-hidden" style="border-top: 1px solid #262626;">
+    <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(59,130,246,0.08) 0%, transparent 70%);"></div>
+    <div class="max-w-5xl mx-auto relative">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+        <!-- Left -->
+        <div class="lg:pt-4">
+          <div class="mono text-xs mb-6 flex items-center gap-3" style="color: #3B82F6; letter-spacing: 0.08em;">
+            <span class="w-4 h-px" style="background: #3B82F6;"></span>
+            CONTACTO
+          </div>
+          <h2 style="font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15;" class="mb-6">
+            ¿Tu operación de revenue está lista para escalar?
+          </h2>
+          <p style="color: #A1A1AA; line-height: 1.7; font-size: 0.95rem;">
+            Empezamos con un diagnóstico. Sin compromiso, sin propuesta genérica — con una conversación real sobre tu negocio.
+          </p>
+        </div>
+
+        <!-- Right — Form -->
+        <div class="dash-card p-8">
+          <form onsubmit="handleSubmit(event)">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label class="block mono text-xs mb-2" style="color: #A1A1AA; letter-spacing: 0.05em;">NOMBRE Y APELLIDO</label>
+                <input type="text" name="nombre" required placeholder="Juan García"
+                  class="w-full rounded-lg px-4 py-3 text-sm">
+              </div>
+              <div>
+                <label class="block mono text-xs mb-2" style="color: #A1A1AA; letter-spacing: 0.05em;">EMPRESA</label>
+                <input type="text" name="empresa" required placeholder="Tu empresa"
+                  class="w-full rounded-lg px-4 py-3 text-sm">
+              </div>
+              <div>
+                <label class="block mono text-xs mb-2" style="color: #A1A1AA; letter-spacing: 0.05em;">MAIL</label>
+                <input type="email" name="mail" required placeholder="juan@empresa.com"
+                  class="w-full rounded-lg px-4 py-3 text-sm">
+              </div>
+              <div>
+                <label class="block mono text-xs mb-2" style="color: #A1A1AA; letter-spacing: 0.05em;">TELÉFONO</label>
+                <input type="tel" name="telefono" placeholder="+54 11 1234 5678"
+                  class="w-full rounded-lg px-4 py-3 text-sm">
+              </div>
+            </div>
+            <button type="submit"
+              class="w-full py-3.5 rounded-lg font-semibold text-white transition-all hover:opacity-90"
+              style="background: #3B82F6; letter-spacing: -0.01em;">
+              Hablemos de tu operación →
+            </button>
+            <div id="form-success" class="hidden mt-4 text-center mono text-sm" style="color: #3B82F6;">
+              ✓ Mensaje recibido. Te contactamos pronto.
+            </div>
+          </form>
+        </div>
+
       </div>
-      <form class="bg-white rounded-2xl p-8 md:p-12 max-w-2xl mx-auto" onsubmit="handleSubmit(event)">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          <div>
-            <label class="block text-sm font-medium text-[#1F2937] mb-2" for="nombre">Nombre y Apellido</label>
-            <input type="text" id="nombre" name="nombre" required
-              class="w-full border border-gray-200 rounded-lg px-4 py-3 text-[#1F2937] text-sm focus:outline-none focus:border-[#3B82F6] transition-colors"
-              placeholder="Juan García">
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-[#1F2937] mb-2" for="empresa">Empresa</label>
-            <input type="text" id="empresa" name="empresa" required
-              class="w-full border border-gray-200 rounded-lg px-4 py-3 text-[#1F2937] text-sm focus:outline-none focus:border-[#3B82F6] transition-colors"
-              placeholder="Tu empresa">
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-[#1F2937] mb-2" for="mail">Mail</label>
-            <input type="email" id="mail" name="mail" required
-              class="w-full border border-gray-200 rounded-lg px-4 py-3 text-[#1F2937] text-sm focus:outline-none focus:border-[#3B82F6] transition-colors"
-              placeholder="juan@empresa.com">
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-[#1F2937] mb-2" for="telefono">Teléfono</label>
-            <input type="tel" id="telefono" name="telefono"
-              class="w-full border border-gray-200 rounded-lg px-4 py-3 text-[#1F2937] text-sm focus:outline-none focus:border-[#3B82F6] transition-colors"
-              placeholder="+54 11 1234 5678">
-          </div>
-        </div>
-        <button type="submit"
-          class="w-full bg-[#3B82F6] text-white py-4 rounded-lg poppins font-semibold text-lg hover:bg-blue-600 transition-colors">
-          Hablemos de tu operación →
-        </button>
-        <div id="form-success" class="hidden mt-4 text-center text-[#3B82F6] font-medium poppins">
-          ¡Mensaje recibido! Te contactamos pronto.
-        </div>
-      </form>
     </div>
   </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 px-6" style="border-top: 1px solid #262626;">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <span style="font-weight: 700; letter-spacing: -0.02em; color: #EDEDED;">Grópera</span>
+      <p class="mono text-xs" style="color: #A1A1AA; letter-spacing: 0.05em;">EL CRECIMIENTO NO SE IMPROVISA. SE OPERA.</p>
+      <p class="mono text-xs" style="color: #A1A1AA;">© 2026</p>
+    </div>
+  </footer>
+
   <script>
     function handleSubmit(e) {
       e.preventDefault();
@@ -290,20 +426,12 @@
         form.reset();
         document.getElementById('form-success').classList.remove('hidden');
       }).catch(() => {
-        document.getElementById('form-success').textContent = 'Hubo un error. Escribinos a hola@gropera.com';
-        document.getElementById('form-success').classList.remove('hidden');
+        const el = document.getElementById('form-success');
+        el.textContent = 'Hubo un error. Escribinos a hola@gropera.com';
+        el.classList.remove('hidden');
       });
     }
   </script>
-
-  <!-- FOOTER -->
-  <footer class="py-10 px-6 border-t border-gray-100">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-      <span class="poppins font-bold text-[#1F2937]">Grópera</span>
-      <p class="text-gray-400 text-sm">El crecimiento no se improvisa. Se opera.</p>
-      <p class="text-gray-400 text-sm">© 2026 Grópera</p>
-    </div>
-  </footer>
 
 </body>
 </html>
