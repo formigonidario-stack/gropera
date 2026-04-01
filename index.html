@@ -44,6 +44,9 @@
     input::placeholder, textarea::placeholder {
       color: #A1A1AA;
     }
+    @media (max-width: 768px) {
+      body { padding-bottom: 68px; }
+    }
     .dash-card {
       background: #171717;
       border: 1px solid #262626;
@@ -57,8 +60,14 @@
   <nav class="fixed top-0 left-0 right-0 z-50 border-b" style="background: rgba(10,10,10,0.85); backdrop-filter: blur(12px); border-color: #262626;">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="#" class="flex items-center gap-2.5">
-        <img src="gropera_logo_transparent_white.png" alt="Grópera" class="h-7">
+        <img src="gropera_logo_transparent_white.png" alt="Grópera" class="h-9">
       </a>
+      <!-- Mobile hamburger -->
+      <button id="menu-btn" onclick="toggleMenu()" class="md:hidden flex items-center justify-center w-9 h-9 rounded-lg" style="color: #A1A1AA; background: #171717; border: 1px solid #262626;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
       <div class="hidden md:flex items-center gap-8" style="font-size: 0.875rem; color: #A1A1AA;">
         <a href="#servicios" class="hover:text-white transition-colors">Servicios</a>
         <a href="#como-trabajamos" class="hover:text-white transition-colors">Cómo trabajamos</a>
@@ -85,7 +94,7 @@
             <span style="color: #A1A1AA;">el caos.</span>
           </h1>
           <p style="color: #A1A1AA; font-size: 1.125rem; line-height: 1.7; max-width: 440px;" class="mb-10">
-            Diseñamos e implementamos sistemas de Growth y Revenue Operations para que marketing, ventas y customer success generen ingresos predecibles.
+            La mayoría de las empresas tienen funnel de adquisición. Las que escalan tienen un sistema completo — adquisición, activación y expansión operando como una sola máquina.
           </p>
           <div class="flex flex-col sm:flex-row gap-3">
             <a href="#contacto" class="px-7 py-3.5 rounded-lg font-semibold text-white transition-all hover:opacity-90 text-center" style="background: #3B82F6; letter-spacing: -0.01em;">
@@ -94,6 +103,21 @@
             <a href="#como-trabajamos" class="px-7 py-3.5 rounded-lg font-medium text-center transition-all hover:border-white" style="border: 1px solid #262626; color: #A1A1AA; letter-spacing: -0.01em;">
               Ver cómo trabajamos
             </a>
+          </div>
+          <!-- Trust signals -->
+          <div class="flex flex-col sm:flex-row flex-wrap gap-x-6 gap-y-2 mt-8" style="font-size: 0.8rem; color: #6B7280;">
+            <span class="flex items-center gap-2">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Sin contrato de largo plazo inicial
+            </span>
+            <span class="flex items-center gap-2">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Primera sesión de diagnóstico sin costo
+            </span>
+            <span class="flex items-center gap-2">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Operamos con vos, no solo asesoramos
+            </span>
           </div>
         </div>
 
@@ -178,7 +202,7 @@
         </div>
         <div class="dash-card p-6 glow-card transition-all">
           <div style="color: #3B82F6; font-size: 1.25rem; margin-bottom: 12px;">—</div>
-          <p style="color: #A1A1AA; line-height: 1.6; font-size: 0.9rem;">Cada área tiene sus métricas. Nadie tiene una visión de revenue unificada.</p>
+          <p style="color: #A1A1AA; line-height: 1.6; font-size: 0.9rem;">Invertís en traer clientes que no activan, no expanden y se van antes del año. El funnel termina en la venta. El revenue empieza ahí.</p>
         </div>
         <div class="dash-card p-6 glow-card transition-all">
           <div style="color: #3B82F6; font-size: 1.25rem; margin-bottom: 12px;">—</div>
@@ -211,9 +235,9 @@
             <span>01</span>
             <span style="color: #262626;">///</span>
           </div>
-          <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Estrategia de Growth & Revenue</h3>
-          <p style="color: #A1A1AA; font-size: 0.85rem; line-height: 1.7; margin-bottom: 14px;">Antes de ejecutar, hay que saber dónde crecer, cómo y con qué prioridades. Alineamos modelo de negocio, go-to-market, métricas y capacidades internas.</p>
-          <p class="mono text-xs" style="color: #3B82F6;">diagnóstico · palancas · roadmap</p>
+          <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Revenue Diagnostic</h3>
+          <p style="color: #A1A1AA; font-size: 0.85rem; line-height: 1.7; margin-bottom: 14px;">Mapeamos las dos mitades de tu operación — adquisición y retención — e identificamos dónde se pierde revenue y qué tiene mayor impacto. El punto de entrada a todos nuestros proyectos.</p>
+          <p class="mono text-xs" style="color: #3B82F6;">auditoría · mapa de prioridades · quick wins</p>
         </div>
 
         <div class="dash-card p-7 glow-card transition-all">
@@ -221,9 +245,9 @@
             <span>02</span>
             <span style="color: #262626;">///</span>
           </div>
-          <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Growth Ops & Revenue Operations</h3>
-          <p style="color: #A1A1AA; font-size: 0.85rem; line-height: 1.7; margin-bottom: 14px;">Eliminamos los silos entre marketing, ventas y customer success. Diseñamos e implementamos los procesos y automatizaciones que convierten el crecimiento en operación diaria.</p>
-          <p class="mono text-xs" style="color: #3B82F6;">funnels · procesos · automatizaciones</p>
+          <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Go-to-Market & Adquisición</h3>
+          <p style="color: #A1A1AA; font-size: 0.85rem; line-height: 1.7; margin-bottom: 14px;">ICP real basado en clientes que retienen y expanden. Canales, mensajes y proceso de calificación alineados entre marketing y ventas. Pipeline predecible con leads que convierten.</p>
+          <p class="mono text-xs" style="color: #3B82F6;">posicionamiento · canales · pipeline</p>
         </div>
 
         <div class="dash-card p-7 glow-card transition-all">
@@ -231,9 +255,9 @@
             <span>03</span>
             <span style="color: #262626;">///</span>
           </div>
-          <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Go-to-Market & Adquisición</h3>
-          <p style="color: #A1A1AA; font-size: 0.85rem; line-height: 1.7; margin-bottom: 14px;">Posicionamiento claro, canales priorizados, mensajes que conectan con el ICP. Sin dispersión, sin experimentación aleatoria.</p>
-          <p class="mono text-xs" style="color: #3B82F6;">posicionamiento · canales · messaging</p>
+          <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Onboarding & Activación</h3>
+          <p style="color: #A1A1AA; font-size: 0.85rem; line-height: 1.7; margin-bottom: 14px;">El cliente firmó. Ahora viene la etapa más crítica e ignorada: los primeros 30 días. Diseñamos el journey post-venta para reducir el Time to Value y asegurar que el cliente experimente valor antes de perder el impulso inicial.</p>
+          <p class="mono text-xs" style="color: #3B82F6;">time to value · aha moment · activación</p>
         </div>
 
         <div class="dash-card p-7 glow-card transition-all">
@@ -241,9 +265,9 @@
             <span>04</span>
             <span style="color: #262626;">///</span>
           </div>
-          <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Optimización de Funnels & Onboarding</h3>
-          <p style="color: #A1A1AA; font-size: 0.85rem; line-height: 1.7; margin-bottom: 14px;">Identificamos dónde se cae el pipeline y por qué. Mejoramos conversión, activación y retención en cada punto de contacto.</p>
-          <p class="mono text-xs" style="color: #3B82F6;">conversión · activación · retención</p>
+          <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Retención, Expansión & Pricing</h3>
+          <p style="color: #A1A1AA; font-size: 0.85rem; line-height: 1.7; margin-bottom: 14px;">Health scoring, playbooks de CS, detección temprana de churn e identificación de oportunidades de upsell y cross-sell. Modelos de pricing que maximizan ingresos por cliente sin frenar la adopción.</p>
+          <p class="mono text-xs" style="color: #3B82F6;">nrr · expansión · churn · pricing</p>
         </div>
 
         <div class="dash-card p-7 glow-card transition-all">
@@ -251,9 +275,9 @@
             <span>05</span>
             <span style="color: #262626;">///</span>
           </div>
-          <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Pricing, Monetización & Revenue Design</h3>
-          <p style="color: #A1A1AA; font-size: 0.85rem; line-height: 1.7; margin-bottom: 14px;">Diseñamos y ajustamos modelos de pricing que maximizan ingresos sin frenar la adopción.</p>
-          <p class="mono text-xs" style="color: #3B82F6;">pricing · upsell · expansión</p>
+          <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Revenue Operations</h3>
+          <p style="color: #A1A1AA; font-size: 0.85rem; line-height: 1.7; margin-bottom: 14px;">CRM, stack y automatizaciones que conectan marketing, ventas y customer success en un solo sistema. Sin RevOps, el funnel completo no tiene columna vertebral.</p>
+          <p class="mono text-xs" style="color: #3B82F6;">crm · automatizaciones · integraciones</p>
         </div>
 
         <div class="dash-card p-7 glow-card transition-all">
@@ -261,21 +285,9 @@
             <span>06</span>
             <span style="color: #262626;">///</span>
           </div>
-          <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Stack Tecnológico, CRM & Automatización</h3>
-          <p style="color: #A1A1AA; font-size: 0.85rem; line-height: 1.7; margin-bottom: 14px;">El CRM como núcleo. El stack como sistema. Seleccionamos, implementamos e integramos las herramientas correctas.</p>
-          <p class="mono text-xs" style="color: #3B82F6;">crm · integraciones · reporting</p>
-        </div>
-
-        <div class="dash-card p-7 glow-card transition-all md:col-span-2 lg:col-span-3">
-          <div class="lg:max-w-lg">
-            <div class="mono text-xs mb-5 flex items-center justify-between" style="color: #A1A1AA;">
-              <span>07</span>
-              <span style="color: #262626;">///</span>
-            </div>
-            <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Métricas, Reporting y Analítica de Ingresos</h3>
-            <p style="color: #A1A1AA; font-size: 0.85rem; line-height: 1.7; margin-bottom: 14px;">Sin datos claros, no hay decisiones buenas. Diseñamos el sistema de métricas y dashboards que te permite saber qué mueve los ingresos y dónde intervenir.</p>
-            <p class="mono text-xs" style="color: #3B82F6;">kpis · dashboards · análisis de revenue</p>
-          </div>
+          <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Estrategia & Revenue Architecture</h3>
+          <p style="color: #A1A1AA; font-size: 0.85rem; line-height: 1.7; margin-bottom: 14px;">Diseño del sistema de revenue completo: ICP, propuesta de valor, journeys de adquisición y retención, modelo de métricas y forecasting. La arquitectura sobre la que se construye todo lo demás.</p>
+          <p class="mono text-xs" style="color: #3B82F6;">roadmap · arquitectura · modelo de revenue</p>
         </div>
 
       </div>
@@ -292,20 +304,144 @@
       <h2 style="font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; letter-spacing: -0.03em;" class="mb-16">Cómo trabajamos</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-px" style="background: #262626;">
         <div class="p-8" style="background: #0A0A0A;">
-          <div class="mono mb-6" style="font-size: 3rem; font-weight: 500; color: #3B82F6; letter-spacing: -0.03em;">01</div>
+          <div class="mb-6">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+              <path d="M11 8v6M8 11h6"/>
+            </svg>
+          </div>
           <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Diagnóstico</h3>
-          <p style="color: #A1A1AA; font-size: 0.875rem; line-height: 1.7;">Mapeamos tu operación de revenue: dónde está la fricción, dónde se pierde el ingreso, qué depende de quién.</p>
+          <p style="color: #A1A1AA; font-size: 0.875rem; line-height: 1.7;">Mapeamos las dos mitades de tu operación — adquisición y retención. Identificamos dónde se pierde revenue y qué palancas tienen mayor impacto.</p>
         </div>
         <div class="p-8" style="background: #0A0A0A;">
-          <div class="mono mb-6" style="font-size: 3rem; font-weight: 500; color: #3B82F6; letter-spacing: -0.03em;">02</div>
+          <div class="mb-6">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/>
+              <path d="M14 17.5h7M17.5 14v7"/>
+            </svg>
+          </div>
           <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Diseño del sistema</h3>
           <p style="color: #A1A1AA; font-size: 0.875rem; line-height: 1.7;">Definimos los procesos, métricas, tecnología y estructura de equipos que tu operación necesita para escalar.</p>
         </div>
         <div class="p-8" style="background: #0A0A0A;">
-          <div class="mono mb-6" style="font-size: 3rem; font-weight: 500; color: #3B82F6; letter-spacing: -0.03em;">03</div>
+          <div class="mb-6">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+            </svg>
+          </div>
           <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Operación continua</h3>
           <p style="color: #A1A1AA; font-size: 0.875rem; line-height: 1.7;">Implementamos, ejecutamos y ajustamos. No entregamos un manual — operamos el sistema con vos hasta que funciona solo.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY GROPERA -->
+  <section id="por-que" class="py-24 px-6" style="border-top: 1px solid #262626;">
+    <div class="max-w-5xl mx-auto">
+      <div class="mono text-xs mb-6 flex items-center gap-3" style="color: #3B82F6; letter-spacing: 0.08em;">
+        <span class="w-4 h-px" style="background: #3B82F6;"></span>
+        POR QUÉ GRÓPERA
+      </div>
+      <h2 style="font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; letter-spacing: -0.03em; max-width: 560px;" class="mb-4">
+        No somos un consultor. No somos una agencia.
+      </h2>
+      <p style="color: #A1A1AA; font-size: 1rem; line-height: 1.7; max-width: 520px;" class="mb-16">
+        Somos el equipo que opera tu sistema de revenue — desde el primer contacto hasta la renovación y expansión — hasta que funciona sin que nos necesités.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        <div class="dash-card p-7" style="border-color: #262626;">
+          <div class="mono text-xs mb-5" style="color: #A1A1AA; letter-spacing: 0.08em;">CONSULTOR TRADICIONAL</div>
+          <div class="space-y-4">
+            <div>
+              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Alcance</div>
+              <p style="font-size: 0.875rem; color: #EDEDED;">Solo estrategia</p>
+            </div>
+            <div>
+              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Entregable</div>
+              <p style="font-size: 0.875rem; color: #EDEDED;">Presentación</p>
+            </div>
+            <div>
+              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Métricas</div>
+              <p style="font-size: 0.875rem; color: #EDEDED;">Actividad</p>
+            </div>
+            <div>
+              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Modelo de trabajo</div>
+              <p style="font-size: 0.875rem; color: #EDEDED;">Análisis externo, entrega y se va</p>
+            </div>
+            <div>
+              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Lado del funnel</div>
+              <p style="font-size: 0.875rem; color: #EDEDED;">Ninguno</p>
+            </div>
+            <div>
+              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Qué queda cuando terminan</div>
+              <p style="font-size: 0.875rem; color: #EDEDED;">Un PDF</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-card p-7" style="border-color: #262626;">
+          <div class="mono text-xs mb-5" style="color: #A1A1AA; letter-spacing: 0.08em;">AGENCIA DE MARKETING</div>
+          <div class="space-y-4">
+            <div>
+              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Alcance</div>
+              <p style="font-size: 0.875rem; color: #EDEDED;">Solo adquisición</p>
+            </div>
+            <div>
+              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Entregable</div>
+              <p style="font-size: 0.875rem; color: #EDEDED;">Leads</p>
+            </div>
+            <div>
+              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Métricas</div>
+              <p style="font-size: 0.875rem; color: #EDEDED;">CPL, ROAS</p>
+            </div>
+            <div>
+              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Modelo de trabajo</div>
+              <p style="font-size: 0.875rem; color: #EDEDED;">Equipo separado que ejecuta sus campañas</p>
+            </div>
+            <div>
+              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Lado del funnel</div>
+              <p style="font-size: 0.875rem; color: #EDEDED;">Solo izquierdo</p>
+            </div>
+            <div>
+              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Qué queda cuando terminan</div>
+              <p style="font-size: 0.875rem; color: #EDEDED;">Dependencia — si la pausás, el motor se para</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-card p-7" style="border-color: #3B82F6; box-shadow: 0 0 0 1px #3B82F6, 0 0 24px rgba(59,130,246,0.08);">
+          <div class="mono text-xs mb-5" style="color: #3B82F6; letter-spacing: 0.08em;">GRÓPERA</div>
+          <div class="space-y-4">
+            <div>
+              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Alcance</div>
+              <p style="font-size: 0.875rem; font-weight: 600; color: #EDEDED;">Full funnel — los dos lados</p>
+            </div>
+            <div>
+              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Entregable</div>
+              <p style="font-size: 0.875rem; font-weight: 600; color: #EDEDED;">Sistema operativo de revenue</p>
+            </div>
+            <div>
+              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Métricas</div>
+              <p style="font-size: 0.875rem; font-weight: 600; color: #EDEDED;">NRR, Revenue</p>
+            </div>
+            <div>
+              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Modelo de trabajo</div>
+              <p style="font-size: 0.875rem; font-weight: 600; color: #EDEDED;">Embedded en tu equipo hasta que opera solo</p>
+            </div>
+            <div>
+              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Lado del funnel</div>
+              <p style="font-size: 0.875rem; font-weight: 600; color: #EDEDED;">Adquisición + activación + expansión</p>
+            </div>
+            <div>
+              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Qué queda cuando terminan</div>
+              <p style="font-size: 0.875rem; font-weight: 600; color: #EDEDED;">Un sistema que funciona sin nosotros</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -347,11 +483,15 @@
               <div>
                 <label class="block mono text-xs mb-2" style="color: #A1A1AA; letter-spacing: 0.05em;">MAIL</label>
                 <input type="email" name="mail" required placeholder="juan@empresa.com"
+                  pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                  title="Ingresá un email válido (ej: nombre@empresa.com)"
                   class="w-full rounded-lg px-4 py-3 text-sm">
               </div>
               <div>
                 <label class="block mono text-xs mb-2" style="color: #A1A1AA; letter-spacing: 0.05em;">TELÉFONO</label>
-                <input type="tel" name="telefono" placeholder="+54 11 1234 5678"
+                <input type="tel" name="telefono" required placeholder="+54 11 1234 5678"
+                  pattern="[\+]?[\d\s\-\(\)\.]{7,20}"
+                  title="Ingresá un número válido con código de país (ej: +54 11 1234 5678)"
                   class="w-full rounded-lg px-4 py-3 text-sm">
               </div>
             </div>
