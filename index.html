@@ -281,60 +281,157 @@
         <p style="color: var(--text-muted); font-size: 0.9rem; max-width: 280px; line-height: 1.6;">Cada servicio es una palanca. Juntos, forman el sistema completo.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-3">
-        <div class="card p-7 transition-all" style="border-color: var(--green); box-shadow: 0 0 0 1px var(--green), 0 4px 24px rgba(31,163,122,0.06);">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
-            <span style="font-size: 0.68rem; font-weight: 600; color: var(--green);">01</span>
-            <span class="tag">PUNTO DE ENTRADA</span>
+      <!-- 01 — Featured entrada -->
+      <div class="card p-7 mb-3 transition-all" style="border-color: var(--green); box-shadow: 0 0 0 1px var(--green), 0 4px 24px rgba(31,163,122,0.06);">
+        <div class="flex flex-col md:flex-row md:items-start gap-6">
+          <div class="flex-1">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: var(--green);">01</span>
+              <span style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.07em; color: var(--text-subtle); text-transform: uppercase;">Punto de entrada</span>
+              <span class="tag">GRATIS</span>
+            </div>
+            <p style="font-size: 0.75rem; font-weight: 500; color: var(--text-subtle); margin-bottom: 4px;">Diagnóstico de negocio</p>
+            <h3 style="font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; margin-bottom: 10px;">Revenue Diagnostic</h3>
+            <p style="color: var(--text-muted); font-size: 0.875rem; line-height: 1.7;">Antes de hacer nada, entendemos qué está pasando. Mapeamos cómo atraés y retenés clientes, e identificamos dónde se pierde dinero y qué tiene mayor impacto arreglar primero. En 30 minutos tenés un plan concreto.</p>
           </div>
-          <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Revenue Diagnostic</h3>
-          <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.7; margin-bottom: 14px;">Mapeamos las dos mitades de tu operación — adquisición y retención — e identificamos dónde se pierde revenue y qué tiene mayor impacto. El punto de entrada a todos nuestros proyectos.</p>
-          <p style="font-size: 0.68rem; color: var(--green); letter-spacing: 0.04em;">auditoría · mapa de prioridades · quick wins</p>
-        </div>
-
-        <div class="card p-7 card-hover transition-all">
-          <div style="font-size: 0.68rem; font-weight: 600; color: var(--text-subtle); margin-bottom: 20px;">02</div>
-          <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Go-to-Market & Adquisición</h3>
-          <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.7; margin-bottom: 14px;">ICP real basado en clientes que retienen y expanden. Canales, mensajes y proceso de calificación alineados entre marketing y ventas. Pipeline predecible con leads que convierten.</p>
-          <p style="font-size: 0.68rem; color: var(--green); letter-spacing: 0.04em;">posicionamiento · canales · pipeline</p>
-        </div>
-
-        <div class="card p-7 card-hover transition-all">
-          <div style="font-size: 0.68rem; font-weight: 600; color: var(--text-subtle); margin-bottom: 20px;">05</div>
-          <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Revenue Operations</h3>
-          <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.7; margin-bottom: 14px;">CRM, stack y automatizaciones que conectan marketing, ventas y customer success en un solo sistema. Sin RevOps, el funnel completo no tiene columna vertebral.</p>
-          <p style="font-size: 0.68rem; color: var(--green); letter-spacing: 0.04em;">crm · automatizaciones · integraciones</p>
+          <div class="flex flex-row md:flex-col gap-2 flex-shrink-0 flex-wrap">
+            <span class="tag">30 minutos</span>
+            <span class="tag">Sin costo</span>
+            <span class="tag">Plan de acción</span>
+            <span class="tag">Quick wins</span>
+          </div>
         </div>
       </div>
 
-      <div class="space-y-2">
-        <div class="card px-6 py-4 card-hover transition-all flex items-center gap-5">
-          <div style="font-size: 0.68rem; font-weight: 600; color: var(--text-subtle); min-width: 20px; flex-shrink: 0;">03</div>
-          <div class="flex-1 min-w-0">
-            <h3 style="font-weight: 600; font-size: 0.875rem; letter-spacing: -0.02em; margin-bottom: 2px;">Onboarding & Activación</h3>
-            <p style="color: var(--text-muted); font-size: 0.8rem; line-height: 1.5;">Journey post-venta para reducir el Time to Value y asegurar que el cliente experimente valor antes de perder el impulso inicial.</p>
+      <!-- 02–07 — Lista compacta -->
+      <div class="space-y-2 mb-3">
+
+        <div class="card px-6 py-5 card-hover transition-all flex items-start gap-5">
+          <div style="flex-shrink: 0; min-width: 24px;">
+            <div style="font-size: 0.68rem; font-weight: 600; color: var(--text-subtle);">02</div>
           </div>
-          <p style="font-size: 0.68rem; color: var(--green); letter-spacing: 0.04em; white-space: nowrap; flex-shrink: 0;" class="hidden md:block">time to value · activación</p>
+          <div class="flex-1 min-w-0">
+            <p style="font-size: 0.68rem; font-weight: 500; color: var(--text-subtle); margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.06em;">Atracción y ventas</p>
+            <h3 style="font-weight: 600; font-size: 0.9rem; letter-spacing: -0.02em; margin-bottom: 6px;">Go-to-Market & Adquisición</h3>
+            <p style="color: var(--text-muted); font-size: 0.8rem; line-height: 1.6;">Conectamos tu mensaje con la gente que realmente quiere lo que vendés. Definimos quién es realmente tu cliente ideal y construimos el proceso para atraerlo y convertirlo. Marketing y ventas alineados, con un flujo de clientes predecible mes a mes.</p>
+          </div>
+          <div class="hidden md:flex flex-col gap-1.5 flex-shrink-0">
+            <span class="tag">Posicionamiento claro</span>
+            <span class="tag">Canal adecuado</span>
+            <span class="tag">Ventas alineadas</span>
+            <span class="tag">Flujo predecible</span>
+          </div>
         </div>
 
-        <div class="card px-6 py-4 card-hover transition-all flex items-center gap-5">
-          <div style="font-size: 0.68rem; font-weight: 600; color: var(--text-subtle); min-width: 20px; flex-shrink: 0;">04</div>
-          <div class="flex-1 min-w-0">
-            <h3 style="font-weight: 600; font-size: 0.875rem; letter-spacing: -0.02em; margin-bottom: 2px;">Retención, Expansión & Pricing</h3>
-            <p style="color: var(--text-muted); font-size: 0.8rem; line-height: 1.5;">Health scoring, playbooks de CS, detección temprana de churn e identificación de oportunidades de upsell y cross-sell.</p>
+        <div class="card px-6 py-5 card-hover transition-all flex items-start gap-5">
+          <div style="flex-shrink: 0; min-width: 24px;">
+            <div style="font-size: 0.68rem; font-weight: 600; color: var(--text-subtle);">03</div>
           </div>
-          <p style="font-size: 0.68rem; color: var(--green); letter-spacing: 0.04em; white-space: nowrap; flex-shrink: 0;" class="hidden md:block">nrr · expansión · churn</p>
+          <div class="flex-1 min-w-0">
+            <p style="font-size: 0.68rem; font-weight: 500; color: var(--text-subtle); margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.06em;">Activación de clientes</p>
+            <h3 style="font-weight: 600; font-size: 0.9rem; letter-spacing: -0.02em; margin-bottom: 6px;">Onboarding & Activación</h3>
+            <p style="color: var(--text-muted); font-size: 0.8rem; line-height: 1.6;">El momento más importante es justo después de la venta. Diseñamos el recorrido post-venta para que el cliente vea valor rápido y no pierda el impulso inicial. Cuanto antes experimente resultados, más tiempo se queda.</p>
+          </div>
+          <div class="hidden md:flex flex-col gap-1.5 flex-shrink-0">
+            <span class="tag">Menos cancelaciones</span>
+            <span class="tag">Más satisfacción</span>
+            <span class="tag">Menos soporte</span>
+            <span class="tag">Time to Value</span>
+          </div>
         </div>
 
-        <div class="card px-6 py-4 card-hover transition-all flex items-center gap-5">
-          <div style="font-size: 0.68rem; font-weight: 600; color: var(--text-subtle); min-width: 20px; flex-shrink: 0;">06</div>
-          <div class="flex-1 min-w-0">
-            <h3 style="font-weight: 600; font-size: 0.875rem; letter-spacing: -0.02em; margin-bottom: 2px;">Estrategia & Revenue Architecture</h3>
-            <p style="color: var(--text-muted); font-size: 0.8rem; line-height: 1.5;">Diseño del sistema de revenue completo: ICP, propuesta de valor, journeys de adquisición y retención, modelo de métricas y forecasting.</p>
+        <div class="card px-6 py-5 card-hover transition-all flex items-start gap-5">
+          <div style="flex-shrink: 0; min-width: 24px;">
+            <div style="font-size: 0.68rem; font-weight: 600; color: var(--text-subtle);">04</div>
           </div>
-          <p style="font-size: 0.68rem; color: var(--green); letter-spacing: 0.04em; white-space: nowrap; flex-shrink: 0;" class="hidden md:block">roadmap · arquitectura</p>
+          <div class="flex-1 min-w-0">
+            <p style="font-size: 0.68rem; font-weight: 500; color: var(--text-subtle); margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.06em;">Retención y expansión</p>
+            <h3 style="font-weight: 600; font-size: 0.9rem; letter-spacing: -0.02em; margin-bottom: 6px;">Retención, Expansión & Pricing</h3>
+            <p style="color: var(--text-muted); font-size: 0.8rem; line-height: 1.6;">Retener es más barato que adquirir. Y expandir, más rentable aún. Identificamos quién está por irse antes de que se vaya, y quién está listo para comprar más. Health scoring, alertas tempranas y estrategias de upsell que funcionan.</p>
+          </div>
+          <div class="hidden md:flex flex-col gap-1.5 flex-shrink-0">
+            <span class="tag">Menos churn</span>
+            <span class="tag">Más expansión</span>
+            <span class="tag">Clientes leales</span>
+            <span class="tag">Upsell & cross-sell</span>
+          </div>
+        </div>
+
+        <div class="card px-6 py-5 card-hover transition-all flex items-start gap-5">
+          <div style="flex-shrink: 0; min-width: 24px;">
+            <div style="font-size: 0.68rem; font-weight: 600; color: var(--text-subtle);">05</div>
+          </div>
+          <div class="flex-1 min-w-0">
+            <p style="font-size: 0.68rem; font-weight: 500; color: var(--text-subtle); margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.06em;">Implementación de herramientas</p>
+            <h3 style="font-weight: 600; font-size: 0.9rem; letter-spacing: -0.02em; margin-bottom: 6px;">Revenue Operations</h3>
+            <p style="color: var(--text-muted); font-size: 0.8rem; line-height: 1.6;">Sin las herramientas bien configuradas, el equipo trabaja el doble para la mitad. Implementamos y conectamos las herramientas digitales de tu negocio: CRM, plataformas de marketing, soporte y automatizaciones. Nada se pierde, nadie repite datos a mano, todo queda registrado y fluye entre los equipos.</p>
+          </div>
+          <div class="hidden md:flex flex-col gap-1.5 flex-shrink-0">
+            <span class="tag">CRM configurado</span>
+            <span class="tag">Automatizaciones</span>
+            <span class="tag">Integraciones</span>
+            <span class="tag">HubSpot · Salesforce</span>
+          </div>
+        </div>
+
+        <div class="card px-6 py-5 card-hover transition-all flex items-start gap-5">
+          <div style="flex-shrink: 0; min-width: 24px;">
+            <div style="font-size: 0.68rem; font-weight: 600; color: var(--text-subtle);">06</div>
+          </div>
+          <div class="flex-1 min-w-0">
+            <p style="font-size: 0.68rem; font-weight: 500; color: var(--text-subtle); margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.06em;">Analítica y métricas</p>
+            <h3 style="font-weight: 600; font-size: 0.9rem; letter-spacing: -0.02em; margin-bottom: 6px;">Analytics & Reporting</h3>
+            <p style="color: var(--text-muted); font-size: 0.8rem; line-height: 1.6;">Tenés datos. Te falta claridad sobre qué los mueve. Configuramos dashboards y reportes que muestran en tiempo real cómo va tu negocio: cuántos clientes entran, cuántos se van, cuánto genera cada canal y dónde está el cuello de botella.</p>
+          </div>
+          <div class="hidden md:flex flex-col gap-1.5 flex-shrink-0">
+            <span class="tag">Dashboards en tiempo real</span>
+            <span class="tag">KPIs definidos</span>
+            <span class="tag">Forecasting</span>
+            <span class="tag">Alertas automáticas</span>
+          </div>
+        </div>
+
+        <div class="card px-6 py-5 card-hover transition-all flex items-start gap-5">
+          <div style="flex-shrink: 0; min-width: 24px;">
+            <div style="font-size: 0.68rem; font-weight: 600; color: var(--text-subtle);">07</div>
+          </div>
+          <div class="flex-1 min-w-0">
+            <p style="font-size: 0.68rem; font-weight: 500; color: var(--text-subtle); margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.06em;">Estrategia de crecimiento</p>
+            <h3 style="font-weight: 600; font-size: 0.9rem; letter-spacing: -0.02em; margin-bottom: 6px;">Revenue Architecture</h3>
+            <p style="color: var(--text-muted); font-size: 0.8rem; line-height: 1.6;">Saber a dónde ir antes de correr. Diseñamos la arquitectura completa de tu sistema de crecimiento: quién es tu cliente, qué propuesta de valor tenés, cómo crecés, qué métricas seguís y cómo se ve el negocio en 12 meses.</p>
+          </div>
+          <div class="hidden md:flex flex-col gap-1.5 flex-shrink-0">
+            <span class="tag">Roadmap claro</span>
+            <span class="tag">Métricas definidas</span>
+            <span class="tag">Forecasting</span>
+            <span class="tag">Visión full-funnel</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 08 — Featured Nuevo -->
+      <div class="card p-7 transition-all" style="background: var(--bg-inv); border-color: var(--bg-inv);">
+        <div class="flex flex-col md:flex-row md:items-start gap-6">
+          <div class="flex-1">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: rgba(255,255,255,0.4);">08</span>
+              <span style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.07em; color: rgba(255,255,255,0.4); text-transform: uppercase;">Productos digitales</span>
+              <span style="background: rgba(31,163,122,0.2); color: #1FA37A; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.07em; padding: 3px 8px; border-radius: 4px;">NUEVO</span>
+            </div>
+            <p style="font-size: 0.75rem; font-weight: 500; color: rgba(255,255,255,0.4); margin-bottom: 4px;">Para cuando querés construir algo propio</p>
+            <h3 style="font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; margin-bottom: 10px; color: #FFFFFF;">Digital Product Development</h3>
+            <p style="color: rgba(255,255,255,0.55); font-size: 0.875rem; line-height: 1.7;">Diseñamos y desarrollamos el producto digital que tu negocio necesita: apps, plataformas, portales de clientes o cualquier herramienta a medida. Trabajamos con vos en cada etapa — desde el primer boceto hasta el lanzamiento y el soporte continuo.</p>
+          </div>
+          <div class="flex flex-row md:flex-col gap-2 flex-shrink-0 flex-wrap">
+            <span style="background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.7); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.07em; padding: 3px 8px; border-radius: 4px;">Apps y plataformas</span>
+            <span style="background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.7); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.07em; padding: 3px 8px; border-radius: 4px;">Diseño + desarrollo</span>
+            <span style="background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.7); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.07em; padding: 3px 8px; border-radius: 4px;">A medida</span>
+            <span style="background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.7); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.07em; padding: 3px 8px; border-radius: 4px;">Soporte continuo</span>
+          </div>
         </div>
       </div>
+
     </div>
   </section>
 
