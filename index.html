@@ -9,70 +9,96 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <style>
     * { font-family: 'Inter', sans-serif; }
-    .mono { font-family: 'JetBrains Mono', monospace; }
     html { scroll-behavior: smooth; }
-    body { background: #0A0A0A; color: #EDEDED; }
+    body { background: #FFFFFF; color: #0F172A; }
 
-    .glow-blue {
-      background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(59,130,246,0.12) 0%, transparent 70%);
+    .btn-primary {
+      background: #1FA37A;
+      color: #FFFFFF;
+      transition: background 0.2s;
     }
-    .glow-card:hover {
-      box-shadow: 0 0 0 1px #3B82F6, 0 0 24px rgba(59,130,246,0.08);
+    .btn-primary:hover { background: #178a68; }
+
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
     }
+    .card-hover:hover {
+      border-color: #1FA37A;
+      box-shadow: 0 0 0 1px #1FA37A, 0 4px 24px rgba(31,163,122,0.07);
+    }
+
+    .tag {
+      background: rgba(31,163,122,0.1);
+      color: #1FA37A;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    .section-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: #1FA37A;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 16px;
+      height: 1px;
+      background: #1FA37A;
+      flex-shrink: 0;
+    }
+
     .hero-glow {
-      background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(59,130,246,0.08) 0%, transparent 70%);
+      background: radial-gradient(ellipse 70% 50% at 75% 50%, rgba(31,163,122,0.06) 0%, transparent 70%);
     }
-    .gradient-text {
-      background: linear-gradient(135deg, #EDEDED 0%, #A1A1AA 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+
     input, textarea {
-      background: #171717;
-      border: 1px solid #262626;
-      color: #EDEDED;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      color: #0F172A;
       transition: border-color 0.2s;
     }
     input:focus, textarea:focus {
       outline: none;
-      border-color: #3B82F6;
+      border-color: #1FA37A;
     }
-    input::placeholder, textarea::placeholder {
-      color: #A1A1AA;
-    }
-    @media (max-width: 768px) {
-      body { padding-bottom: 68px; }
-    }
-    .dash-card {
-      background: #171717;
-      border: 1px solid #262626;
-      border-radius: 12px;
-    }
+    input::placeholder, textarea::placeholder { color: #94A3B8; }
+
+    @media (max-width: 768px) { body { padding-bottom: 68px; } }
   </style>
 </head>
 <body>
 
   <!-- NAV -->
-  <nav class="fixed top-0 left-0 right-0 z-50 border-b" style="background: rgba(10,10,10,0.85); backdrop-filter: blur(12px); border-color: #262626;">
+  <nav class="fixed top-0 left-0 right-0 z-50" style="background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid #E2E8F0;">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2.5">
-        <img src="gropera_logo_transparent_white.png" alt="Grópera" class="h-9">
+      <a href="#">
+        <img src="logo gropera.jpg" alt="Grópera" class="h-9">
       </a>
-      <!-- Mobile hamburger -->
-      <button id="menu-btn" onclick="toggleMenu()" class="md:hidden flex items-center justify-center w-9 h-9 rounded-lg" style="color: #A1A1AA; background: #171717; border: 1px solid #262626;">
+      <button id="menu-btn" onclick="toggleMenu()" class="md:hidden flex items-center justify-center w-9 h-9 rounded-lg" style="color: #64748B; background: #F8FAFC; border: 1px solid #E2E8F0;">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
         </svg>
       </button>
-      <div class="hidden md:flex items-center gap-8" style="font-size: 0.875rem; color: #A1A1AA;">
-        <a href="#servicios" class="hover:text-white transition-colors">Servicios</a>
-        <a href="#como-trabajamos" class="hover:text-white transition-colors">Cómo trabajamos</a>
-        <a href="#por-que" class="hover:text-white transition-colors">Por qué Grópera</a>
-        <a href="#contacto" class="px-4 py-2 rounded-lg text-white font-medium transition-all hover:opacity-90" style="background: #3B82F6; font-size: 0.875rem;">Hablemos →</a>
+      <div class="hidden md:flex items-center gap-8" style="font-size: 0.875rem; color: #64748B;">
+        <a href="#servicios" class="hover:text-gray-900 transition-colors">Servicios</a>
+        <a href="#como-trabajamos" class="hover:text-gray-900 transition-colors">Cómo trabajamos</a>
+        <a href="#por-que" class="hover:text-gray-900 transition-colors">Por qué Grópera</a>
+        <a href="#contacto" class="px-4 py-2 rounded-lg font-medium transition-all btn-primary" style="font-size: 0.875rem;">Hablemos →</a>
       </div>
     </div>
   </nav>
@@ -85,91 +111,84 @@
 
         <!-- Left -->
         <div>
-          <div class="mono text-xs mb-6 flex items-center gap-3" style="color: #3B82F6; letter-spacing: 0.08em;">
-            <span class="w-4 h-px" style="background: #3B82F6;"></span>
-            GROWTH OPS / REVENUE OPS
-          </div>
+          <div class="section-label">GROWTH OPS / REVENUE OPS</div>
           <h1 style="font-size: clamp(2.5rem, 5vw, 3.75rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.03em;" class="mb-6">
             Escalá tus ingresos<br>sin que escale<br>
-            <span style="color: #A1A1AA;">el caos.</span>
+            <span style="color: #1FA37A;">el caos.</span>
           </h1>
-          <p style="color: #A1A1AA; font-size: 1.125rem; line-height: 1.7; max-width: 440px;" class="mb-10">
+          <p style="color: #64748B; font-size: 1.125rem; line-height: 1.7; max-width: 440px;" class="mb-10">
             Grópera diseña, construye e implementa el ecosistema digital que conecta tu marketing, ventas y customer experience para que tu negocio escale de forma predecible y autónoma.
           </p>
           <div class="flex flex-col sm:flex-row gap-3">
-            <a href="#contacto" class="px-7 py-3.5 rounded-lg font-semibold text-white transition-all hover:opacity-90 text-center" style="background: #3B82F6; letter-spacing: -0.01em;">
+            <a href="#contacto" class="px-7 py-3.5 rounded-lg font-semibold transition-all text-center btn-primary" style="letter-spacing: -0.01em;">
               Hablemos de tu operación →
             </a>
-            <a href="#como-trabajamos" class="px-7 py-3.5 rounded-lg font-medium text-center transition-all hover:border-white" style="border: 1px solid #262626; color: #A1A1AA; letter-spacing: -0.01em;">
+            <a href="#como-trabajamos" class="px-7 py-3.5 rounded-lg font-medium text-center transition-all hover:border-gray-400" style="border: 1px solid #E2E8F0; color: #64748B; letter-spacing: -0.01em;">
               Ver cómo trabajamos
             </a>
           </div>
-          <!-- Trust signals -->
-          <div class="flex flex-col sm:flex-row flex-wrap gap-x-6 gap-y-2 mt-8" style="font-size: 0.8rem; color: #6B7280;">
+          <div class="flex flex-col sm:flex-row flex-wrap gap-x-6 gap-y-2 mt-8" style="font-size: 0.8rem; color: #94A3B8;">
             <span class="flex items-center gap-2">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1FA37A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
               Sin contrato de largo plazo inicial
             </span>
             <span class="flex items-center gap-2">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1FA37A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
               Primera sesión de diagnóstico sin costo
             </span>
             <span class="flex items-center gap-2">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1FA37A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
               Operamos con vos, no solo asesoramos
             </span>
           </div>
         </div>
 
-        <!-- Right — abstract visual -->
+        <!-- Right — dashboard visual -->
         <div class="hidden lg:block relative">
           <div class="relative" style="height: 420px;">
 
-            <!-- Main card -->
-            <div class="dash-card p-6 absolute top-0 right-0" style="width: 340px;">
-              <div class="mono text-xs mb-4" style="color: #A1A1AA;">revenue_ops.status</div>
+            <div class="card p-6 absolute top-0 right-0" style="width: 340px; box-shadow: 0 4px 32px rgba(0,0,0,0.06);">
+              <div style="font-size: 0.68rem; font-weight: 500; letter-spacing: 0.06em; color: #94A3B8; margin-bottom: 16px;">revenue_ops.status</div>
               <div class="space-y-3">
                 <div class="flex items-center justify-between">
-                  <span style="color: #A1A1AA; font-size: 0.8rem;">Pipeline unificado</span>
-                  <span class="mono text-xs px-2 py-0.5 rounded" style="background: rgba(59,130,246,0.1); color: #3B82F6;">activo</span>
+                  <span style="color: #64748B; font-size: 0.8rem;">Pipeline unificado</span>
+                  <span class="tag">activo</span>
                 </div>
                 <div class="flex items-center justify-between">
-                  <span style="color: #A1A1AA; font-size: 0.8rem;">Handoffs automatizados</span>
-                  <span class="mono text-xs px-2 py-0.5 rounded" style="background: rgba(59,130,246,0.1); color: #3B82F6;">activo</span>
+                  <span style="color: #64748B; font-size: 0.8rem;">Handoffs automatizados</span>
+                  <span class="tag">activo</span>
                 </div>
                 <div class="flex items-center justify-between">
-                  <span style="color: #A1A1AA; font-size: 0.8rem;">Silos eliminados</span>
-                  <span class="mono text-xs px-2 py-0.5 rounded" style="background: rgba(59,130,246,0.1); color: #3B82F6;">activo</span>
+                  <span style="color: #64748B; font-size: 0.8rem;">Silos eliminados</span>
+                  <span class="tag">activo</span>
                 </div>
                 <div class="flex items-center justify-between">
-                  <span style="color: #A1A1AA; font-size: 0.8rem;">Revenue predecible</span>
-                  <span class="mono text-xs px-2 py-0.5 rounded" style="background: rgba(59,130,246,0.1); color: #3B82F6;">activo</span>
+                  <span style="color: #64748B; font-size: 0.8rem;">Revenue predecible</span>
+                  <span class="tag">activo</span>
                 </div>
               </div>
-              <div class="mt-5 pt-4" style="border-top: 1px solid #262626;">
-                <div class="mono text-xs mb-2" style="color: #A1A1AA;">mrr.growth</div>
+              <div class="mt-5 pt-4" style="border-top: 1px solid #E2E8F0;">
+                <div style="font-size: 0.68rem; font-weight: 500; letter-spacing: 0.06em; color: #94A3B8; margin-bottom: 8px;">mrr.growth</div>
                 <div class="flex items-end gap-1 h-10">
-                  <div class="rounded-sm w-3" style="height: 30%; background: #262626;"></div>
-                  <div class="rounded-sm w-3" style="height: 45%; background: #262626;"></div>
-                  <div class="rounded-sm w-3" style="height: 40%; background: #262626;"></div>
-                  <div class="rounded-sm w-3" style="height: 60%; background: #3B82F6; opacity: 0.4;"></div>
-                  <div class="rounded-sm w-3" style="height: 55%; background: #3B82F6; opacity: 0.5;"></div>
-                  <div class="rounded-sm w-3" style="height: 75%; background: #3B82F6; opacity: 0.7;"></div>
-                  <div class="rounded-sm w-3" style="height: 90%; background: #3B82F6;"></div>
-                  <div class="rounded-sm w-3" style="height: 100%; background: #3B82F6;"></div>
+                  <div class="rounded-sm w-3" style="height: 30%; background: #E2E8F0;"></div>
+                  <div class="rounded-sm w-3" style="height: 45%; background: #E2E8F0;"></div>
+                  <div class="rounded-sm w-3" style="height: 40%; background: #E2E8F0;"></div>
+                  <div class="rounded-sm w-3" style="height: 60%; background: #1FA37A; opacity: 0.35;"></div>
+                  <div class="rounded-sm w-3" style="height: 55%; background: #1FA37A; opacity: 0.5;"></div>
+                  <div class="rounded-sm w-3" style="height: 75%; background: #1FA37A; opacity: 0.7;"></div>
+                  <div class="rounded-sm w-3" style="height: 90%; background: #1FA37A;"></div>
+                  <div class="rounded-sm w-3" style="height: 100%; background: #1FA37A;"></div>
                 </div>
               </div>
             </div>
 
-            <!-- Secondary card -->
-            <div class="dash-card p-5 absolute bottom-8 left-0" style="width: 220px;">
-              <div class="mono text-xs mb-3" style="color: #A1A1AA;">conversion_rate</div>
-              <div style="font-size: 2rem; font-weight: 700; letter-spacing: -0.03em; color: #EDEDED;">+34%</div>
-              <div style="font-size: 0.75rem; color: #3B82F6;" class="mono mt-1">↑ post-implementación</div>
+            <div class="card p-5 absolute bottom-8 left-0" style="width: 220px; box-shadow: 0 4px 32px rgba(0,0,0,0.06);">
+              <div style="font-size: 0.68rem; font-weight: 500; letter-spacing: 0.06em; color: #94A3B8; margin-bottom: 10px;">conversion_rate</div>
+              <div style="font-size: 2rem; font-weight: 700; letter-spacing: -0.03em; color: #0F172A;">+34%</div>
+              <div style="font-size: 0.75rem; color: #1FA37A; margin-top: 4px;">↑ post-implementación</div>
             </div>
 
-            <!-- Glow behind main card -->
-            <div class="absolute top-10 right-10 w-40 h-40 rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%); filter: blur(20px);"></div>
+            <div class="absolute top-10 right-10 w-48 h-48 rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(31,163,122,0.08) 0%, transparent 70%); filter: blur(30px);"></div>
           </div>
         </div>
 
@@ -178,119 +197,106 @@
   </section>
 
   <!-- PROBLEM -->
-  <section class="py-24 px-6" style="border-top: 1px solid #262626;">
+  <section class="py-24 px-6" style="background: #F8FAF9; border-top: 1px solid #E2E8F0;">
     <div class="max-w-5xl mx-auto">
-      <div class="mono text-xs mb-6 flex items-center gap-3" style="color: #3B82F6; letter-spacing: 0.08em;">
-        <span class="w-4 h-px" style="background: #3B82F6;"></span>
-        EL PROBLEMA
-      </div>
+      <div class="section-label">EL PROBLEMA</div>
       <h2 style="font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; letter-spacing: -0.03em; max-width: 600px;" class="mb-14">
         Lo que pasa cuando el crecimiento no tiene sistema
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div class="dash-card p-6 glow-card transition-all">
-          <div style="color: #3B82F6; font-size: 1.25rem; margin-bottom: 12px;">—</div>
-          <p style="color: #A1A1AA; line-height: 1.6; font-size: 0.9rem;">Marketing genera leads. Ventas no los trabaja igual. Customer success no sabe qué se prometió.</p>
+        <div class="card p-6 card-hover transition-all">
+          <div style="color: #1FA37A; font-size: 1.25rem; margin-bottom: 12px;">—</div>
+          <p style="color: #64748B; line-height: 1.6; font-size: 0.9rem;">Marketing genera leads. Ventas no los trabaja igual. Customer success no sabe qué se prometió.</p>
         </div>
-        <div class="dash-card p-6 glow-card transition-all">
-          <div style="color: #3B82F6; font-size: 1.25rem; margin-bottom: 12px;">—</div>
-          <p style="color: #A1A1AA; line-height: 1.6; font-size: 0.9rem;">Los resultados del mes dependen de quién estaba disponible, no de un proceso que funciona solo.</p>
+        <div class="card p-6 card-hover transition-all">
+          <div style="color: #1FA37A; font-size: 1.25rem; margin-bottom: 12px;">—</div>
+          <p style="color: #64748B; line-height: 1.6; font-size: 0.9rem;">Los resultados del mes dependen de quién estaba disponible, no de un proceso que funciona solo.</p>
         </div>
-        <div class="dash-card p-6 glow-card transition-all">
-          <div style="color: #3B82F6; font-size: 1.25rem; margin-bottom: 12px;">—</div>
-          <p style="color: #A1A1AA; line-height: 1.6; font-size: 0.9rem;">Tenés datos. No tienes claridad sobre qué los mueve.</p>
+        <div class="card p-6 card-hover transition-all">
+          <div style="color: #1FA37A; font-size: 1.25rem; margin-bottom: 12px;">—</div>
+          <p style="color: #64748B; line-height: 1.6; font-size: 0.9rem;">Tenés datos. No tenés claridad sobre qué los mueve.</p>
         </div>
-        <div class="dash-card p-6 glow-card transition-all">
-          <div style="color: #3B82F6; font-size: 1.25rem; margin-bottom: 12px;">—</div>
-          <p style="color: #A1A1AA; line-height: 1.6; font-size: 0.9rem;">Invertís en traer clientes que no activan, no expanden y se van antes del año. El funnel termina en la venta. El revenue empieza ahí.</p>
+        <div class="card p-6 card-hover transition-all">
+          <div style="color: #1FA37A; font-size: 1.25rem; margin-bottom: 12px;">—</div>
+          <p style="color: #64748B; line-height: 1.6; font-size: 0.9rem;">Invertís en traer clientes que no activan, no expanden y se van antes del año. El funnel termina en la venta. El revenue empieza ahí.</p>
         </div>
-        <div class="dash-card p-6 glow-card transition-all">
-          <div style="color: #3B82F6; font-size: 1.25rem; margin-bottom: 12px;">—</div>
-          <p style="color: #A1A1AA; line-height: 1.6; font-size: 0.9rem;">Contrataste más gente. El problema no desapareció — solo se hizo más caro.</p>
+        <div class="card p-6 card-hover transition-all">
+          <div style="color: #1FA37A; font-size: 1.25rem; margin-bottom: 12px;">—</div>
+          <p style="color: #64748B; line-height: 1.6; font-size: 0.9rem;">Contrataste más gente. El problema no desapareció — solo se hizo más caro.</p>
         </div>
-        <div class="dash-card p-6 flex items-end" style="background: transparent; border: 1px solid #262626;">
-          <p style="font-weight: 600; letter-spacing: -0.02em; font-size: 0.95rem; color: #EDEDED;">No es un problema de esfuerzo. Es un problema de estructura.</p>
+        <div class="p-6 flex items-end rounded-xl" style="background: #0F172A;">
+          <p style="font-weight: 600; letter-spacing: -0.02em; font-size: 0.95rem; color: #FFFFFF;">No es un problema de esfuerzo. Es un problema de estructura.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- SERVICES -->
-  <section id="servicios" class="py-24 px-6" style="border-top: 1px solid #262626;">
+  <section id="servicios" class="py-24 px-6" style="border-top: 1px solid #E2E8F0;">
     <div class="max-w-6xl mx-auto">
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
         <div>
-          <div class="mono text-xs mb-4 flex items-center gap-3" style="color: #3B82F6; letter-spacing: 0.08em;">
-            <span class="w-4 h-px" style="background: #3B82F6;"></span>
-            SERVICIOS
-          </div>
+          <div class="section-label">SERVICIOS</div>
           <h2 style="font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; letter-spacing: -0.03em;">Lo que hacemos</h2>
         </div>
-        <p style="color: #A1A1AA; font-size: 0.9rem; max-width: 280px; line-height: 1.6;">Cada servicio es una palanca. Juntos, forman el sistema completo.</p>
+        <p style="color: #64748B; font-size: 0.9rem; max-width: 280px; line-height: 1.6;">Cada servicio es una palanca. Juntos, forman el sistema completo.</p>
       </div>
-      <!-- Featured — 3 cards principales -->
+
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-3">
 
-        <div class="dash-card p-7 glow-card transition-all" style="border-color: #3B82F6; box-shadow: 0 0 0 1px #3B82F6, 0 0 24px rgba(59,130,246,0.06);">
-          <div class="mono text-xs mb-5 flex items-center justify-between" style="color: #3B82F6;">
-            <span>01</span>
-            <span class="px-2 py-0.5 rounded" style="background: rgba(59,130,246,0.12); font-size: 0.65rem; letter-spacing: 0.06em;">PUNTO DE ENTRADA</span>
+        <div class="card p-7 transition-all" style="border-color: #1FA37A; box-shadow: 0 0 0 1px #1FA37A, 0 4px 24px rgba(31,163,122,0.06);">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+            <span style="font-size: 0.68rem; font-weight: 600; color: #1FA37A;">01</span>
+            <span class="tag">PUNTO DE ENTRADA</span>
           </div>
           <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Revenue Diagnostic</h3>
-          <p style="color: #A1A1AA; font-size: 0.85rem; line-height: 1.7; margin-bottom: 14px;">Mapeamos las dos mitades de tu operación — adquisición y retención — e identificamos dónde se pierde revenue y qué tiene mayor impacto. El punto de entrada a todos nuestros proyectos.</p>
-          <p class="mono text-xs" style="color: #3B82F6;">auditoría · mapa de prioridades · quick wins</p>
+          <p style="color: #64748B; font-size: 0.85rem; line-height: 1.7; margin-bottom: 14px;">Mapeamos las dos mitades de tu operación — adquisición y retención — e identificamos dónde se pierde revenue y qué tiene mayor impacto. El punto de entrada a todos nuestros proyectos.</p>
+          <p style="font-size: 0.68rem; color: #1FA37A; letter-spacing: 0.04em;">auditoría · mapa de prioridades · quick wins</p>
         </div>
 
-        <div class="dash-card p-7 glow-card transition-all">
-          <div class="mono text-xs mb-5 flex items-center justify-between" style="color: #A1A1AA;">
-            <span>02</span>
-            <span style="color: #262626;">///</span>
-          </div>
+        <div class="card p-7 card-hover transition-all">
+          <div style="font-size: 0.68rem; font-weight: 600; color: #94A3B8; margin-bottom: 20px;">02</div>
           <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Go-to-Market & Adquisición</h3>
-          <p style="color: #A1A1AA; font-size: 0.85rem; line-height: 1.7; margin-bottom: 14px;">ICP real basado en clientes que retienen y expanden. Canales, mensajes y proceso de calificación alineados entre marketing y ventas. Pipeline predecible con leads que convierten.</p>
-          <p class="mono text-xs" style="color: #3B82F6;">posicionamiento · canales · pipeline</p>
+          <p style="color: #64748B; font-size: 0.85rem; line-height: 1.7; margin-bottom: 14px;">ICP real basado en clientes que retienen y expanden. Canales, mensajes y proceso de calificación alineados entre marketing y ventas. Pipeline predecible con leads que convierten.</p>
+          <p style="font-size: 0.68rem; color: #1FA37A; letter-spacing: 0.04em;">posicionamiento · canales · pipeline</p>
         </div>
 
-        <div class="dash-card p-7 glow-card transition-all">
-          <div class="mono text-xs mb-5 flex items-center justify-between" style="color: #A1A1AA;">
-            <span>05</span>
-            <span style="color: #262626;">///</span>
-          </div>
+        <div class="card p-7 card-hover transition-all">
+          <div style="font-size: 0.68rem; font-weight: 600; color: #94A3B8; margin-bottom: 20px;">05</div>
           <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Revenue Operations</h3>
-          <p style="color: #A1A1AA; font-size: 0.85rem; line-height: 1.7; margin-bottom: 14px;">CRM, stack y automatizaciones que conectan marketing, ventas y customer success en un solo sistema. Sin RevOps, el funnel completo no tiene columna vertebral.</p>
-          <p class="mono text-xs" style="color: #3B82F6;">crm · automatizaciones · integraciones</p>
+          <p style="color: #64748B; font-size: 0.85rem; line-height: 1.7; margin-bottom: 14px;">CRM, stack y automatizaciones que conectan marketing, ventas y customer success en un solo sistema. Sin RevOps, el funnel completo no tiene columna vertebral.</p>
+          <p style="font-size: 0.68rem; color: #1FA37A; letter-spacing: 0.04em;">crm · automatizaciones · integraciones</p>
         </div>
 
       </div>
 
-      <!-- Servicios adicionales — lista compacta -->
       <div class="space-y-2">
 
-        <div class="dash-card px-6 py-4 glow-card transition-all flex items-center gap-5">
-          <div class="mono text-xs flex-shrink-0" style="color: #A1A1AA; min-width: 20px;">03</div>
+        <div class="card px-6 py-4 card-hover transition-all flex items-center gap-5">
+          <div style="font-size: 0.68rem; font-weight: 600; color: #94A3B8; min-width: 20px; flex-shrink: 0;">03</div>
           <div class="flex-1 min-w-0">
             <h3 style="font-weight: 600; font-size: 0.875rem; letter-spacing: -0.02em; margin-bottom: 2px;">Onboarding & Activación</h3>
-            <p style="color: #A1A1AA; font-size: 0.8rem; line-height: 1.5;">Journey post-venta para reducir el Time to Value y asegurar que el cliente experimente valor antes de perder el impulso inicial.</p>
+            <p style="color: #64748B; font-size: 0.8rem; line-height: 1.5;">Journey post-venta para reducir el Time to Value y asegurar que el cliente experimente valor antes de perder el impulso inicial.</p>
           </div>
-          <p class="mono text-xs hidden md:block flex-shrink-0" style="color: #3B82F6; white-space: nowrap;">time to value · activación</p>
+          <p style="font-size: 0.68rem; color: #1FA37A; letter-spacing: 0.04em; white-space: nowrap; flex-shrink: 0;" class="hidden md:block">time to value · activación</p>
         </div>
 
-        <div class="dash-card px-6 py-4 glow-card transition-all flex items-center gap-5">
-          <div class="mono text-xs flex-shrink-0" style="color: #A1A1AA; min-width: 20px;">04</div>
+        <div class="card px-6 py-4 card-hover transition-all flex items-center gap-5">
+          <div style="font-size: 0.68rem; font-weight: 600; color: #94A3B8; min-width: 20px; flex-shrink: 0;">04</div>
           <div class="flex-1 min-w-0">
             <h3 style="font-weight: 600; font-size: 0.875rem; letter-spacing: -0.02em; margin-bottom: 2px;">Retención, Expansión & Pricing</h3>
-            <p style="color: #A1A1AA; font-size: 0.8rem; line-height: 1.5;">Health scoring, playbooks de CS, detección temprana de churn e identificación de oportunidades de upsell y cross-sell.</p>
+            <p style="color: #64748B; font-size: 0.8rem; line-height: 1.5;">Health scoring, playbooks de CS, detección temprana de churn e identificación de oportunidades de upsell y cross-sell.</p>
           </div>
-          <p class="mono text-xs hidden md:block flex-shrink-0" style="color: #3B82F6; white-space: nowrap;">nrr · expansión · churn</p>
+          <p style="font-size: 0.68rem; color: #1FA37A; letter-spacing: 0.04em; white-space: nowrap; flex-shrink: 0;" class="hidden md:block">nrr · expansión · churn</p>
         </div>
 
-        <div class="dash-card px-6 py-4 glow-card transition-all flex items-center gap-5">
-          <div class="mono text-xs flex-shrink-0" style="color: #A1A1AA; min-width: 20px;">06</div>
+        <div class="card px-6 py-4 card-hover transition-all flex items-center gap-5">
+          <div style="font-size: 0.68rem; font-weight: 600; color: #94A3B8; min-width: 20px; flex-shrink: 0;">06</div>
           <div class="flex-1 min-w-0">
             <h3 style="font-weight: 600; font-size: 0.875rem; letter-spacing: -0.02em; margin-bottom: 2px;">Estrategia & Revenue Architecture</h3>
-            <p style="color: #A1A1AA; font-size: 0.8rem; line-height: 1.5;">Diseño del sistema de revenue completo: ICP, propuesta de valor, journeys de adquisición y retención, modelo de métricas y forecasting.</p>
+            <p style="color: #64748B; font-size: 0.8rem; line-height: 1.5;">Diseño del sistema de revenue completo: ICP, propuesta de valor, journeys de adquisición y retención, modelo de métricas y forecasting.</p>
           </div>
-          <p class="mono text-xs hidden md:block flex-shrink-0" style="color: #3B82F6; white-space: nowrap;">roadmap · arquitectura</p>
+          <p style="font-size: 0.68rem; color: #1FA37A; letter-spacing: 0.04em; white-space: nowrap; flex-shrink: 0;" class="hidden md:block">roadmap · arquitectura</p>
         </div>
 
       </div>
@@ -298,150 +304,90 @@
   </section>
 
   <!-- HOW WE WORK -->
-  <section id="como-trabajamos" class="py-24 px-6" style="border-top: 1px solid #262626;">
+  <section id="como-trabajamos" class="py-24 px-6" style="background: #F8FAF9; border-top: 1px solid #E2E8F0;">
     <div class="max-w-5xl mx-auto">
-      <div class="mono text-xs mb-6 flex items-center gap-3" style="color: #3B82F6; letter-spacing: 0.08em;">
-        <span class="w-4 h-px" style="background: #3B82F6;"></span>
-        PROCESO
-      </div>
+      <div class="section-label">PROCESO</div>
       <h2 style="font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; letter-spacing: -0.03em;" class="mb-16">Cómo trabajamos</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-px" style="background: #262626;">
-        <div class="p-8" style="background: #0A0A0A;">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-px" style="background: #E2E8F0;">
+        <div class="p-8" style="background: #F8FAF9;">
           <div class="mb-6">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1FA37A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
               <path d="M11 8v6M8 11h6"/>
             </svg>
           </div>
           <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Diagnóstico</h3>
-          <p style="color: #A1A1AA; font-size: 0.875rem; line-height: 1.7;">Mapeamos las dos mitades de tu operación — adquisición y retención. Identificamos dónde se pierde revenue y qué palancas tienen mayor impacto.</p>
+          <p style="color: #64748B; font-size: 0.875rem; line-height: 1.7;">Mapeamos las dos mitades de tu operación — adquisición y retención. Identificamos dónde se pierde revenue y qué palancas tienen mayor impacto.</p>
         </div>
-        <div class="p-8" style="background: #0A0A0A;">
+        <div class="p-8" style="background: #F8FAF9;">
           <div class="mb-6">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1FA37A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/>
               <path d="M14 17.5h7M17.5 14v7"/>
             </svg>
           </div>
           <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Diseño del sistema</h3>
-          <p style="color: #A1A1AA; font-size: 0.875rem; line-height: 1.7;">Definimos los procesos, métricas, tecnología y estructura de equipos que tu operación necesita para escalar.</p>
+          <p style="color: #64748B; font-size: 0.875rem; line-height: 1.7;">Definimos los procesos, métricas, tecnología y estructura de equipos que tu operación necesita para escalar.</p>
         </div>
-        <div class="p-8" style="background: #0A0A0A;">
+        <div class="p-8" style="background: #F8FAF9;">
           <div class="mb-6">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1FA37A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
             </svg>
           </div>
           <h3 style="font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px;">Operación continua</h3>
-          <p style="color: #A1A1AA; font-size: 0.875rem; line-height: 1.7;">Implementamos, ejecutamos y ajustamos. No entregamos un manual — operamos el sistema con vos hasta que funciona solo.</p>
+          <p style="color: #64748B; font-size: 0.875rem; line-height: 1.7;">Implementamos, ejecutamos y ajustamos. No entregamos un manual — operamos el sistema con vos hasta que funciona solo.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- WHY GROPERA -->
-  <section id="por-que" class="py-24 px-6" style="border-top: 1px solid #262626;">
+  <section id="por-que" class="py-24 px-6" style="border-top: 1px solid #E2E8F0;">
     <div class="max-w-5xl mx-auto">
-      <div class="mono text-xs mb-6 flex items-center gap-3" style="color: #3B82F6; letter-spacing: 0.08em;">
-        <span class="w-4 h-px" style="background: #3B82F6;"></span>
-        POR QUÉ GRÓPERA
-      </div>
+      <div class="section-label">POR QUÉ GRÓPERA</div>
       <h2 style="font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; letter-spacing: -0.03em; max-width: 560px;" class="mb-4">
         No somos un consultor. No somos una agencia.
       </h2>
-      <p style="color: #A1A1AA; font-size: 1rem; line-height: 1.7; max-width: 520px;" class="mb-16">
+      <p style="color: #64748B; font-size: 1rem; line-height: 1.7; max-width: 520px;" class="mb-16">
         Somos el equipo que opera tu sistema de revenue — desde el primer contacto hasta la renovación y expansión — hasta que funciona sin que nos necesités.
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 
-        <div class="dash-card p-7" style="border-color: #262626;">
-          <div class="mono text-xs mb-5" style="color: #A1A1AA; letter-spacing: 0.08em;">CONSULTOR TRADICIONAL</div>
+        <div class="card p-7" style="background: #F8FAFC;">
+          <div style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; color: #94A3B8; margin-bottom: 20px;">CONSULTOR TRADICIONAL</div>
           <div class="space-y-4">
-            <div>
-              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Alcance</div>
-              <p style="font-size: 0.875rem; color: #EDEDED;">Solo estrategia</p>
-            </div>
-            <div>
-              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Entregable</div>
-              <p style="font-size: 0.875rem; color: #EDEDED;">Presentación</p>
-            </div>
-            <div>
-              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Métricas</div>
-              <p style="font-size: 0.875rem; color: #EDEDED;">Actividad</p>
-            </div>
-            <div>
-              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Modelo de trabajo</div>
-              <p style="font-size: 0.875rem; color: #EDEDED;">Análisis externo, entrega y se va</p>
-            </div>
-            <div>
-              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Lado del funnel</div>
-              <p style="font-size: 0.875rem; color: #EDEDED;">Ninguno</p>
-            </div>
-            <div>
-              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Qué queda cuando terminan</div>
-              <p style="font-size: 0.875rem; color: #EDEDED;">Un PDF</p>
-            </div>
+            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: #94A3B8; margin-bottom: 4px;">Alcance</div><p style="font-size: 0.875rem;">Solo estrategia</p></div>
+            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: #94A3B8; margin-bottom: 4px;">Entregable</div><p style="font-size: 0.875rem;">Presentación</p></div>
+            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: #94A3B8; margin-bottom: 4px;">Métricas</div><p style="font-size: 0.875rem;">Actividad</p></div>
+            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: #94A3B8; margin-bottom: 4px;">Modelo de trabajo</div><p style="font-size: 0.875rem;">Análisis externo, entrega y se va</p></div>
+            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: #94A3B8; margin-bottom: 4px;">Lado del funnel</div><p style="font-size: 0.875rem;">Ninguno</p></div>
+            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: #94A3B8; margin-bottom: 4px;">Qué queda cuando terminan</div><p style="font-size: 0.875rem;">Un PDF</p></div>
           </div>
         </div>
 
-        <div class="dash-card p-7" style="border-color: #262626;">
-          <div class="mono text-xs mb-5" style="color: #A1A1AA; letter-spacing: 0.08em;">AGENCIA DE MARKETING</div>
+        <div class="card p-7" style="background: #F8FAFC;">
+          <div style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; color: #94A3B8; margin-bottom: 20px;">AGENCIA DE MARKETING</div>
           <div class="space-y-4">
-            <div>
-              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Alcance</div>
-              <p style="font-size: 0.875rem; color: #EDEDED;">Solo adquisición</p>
-            </div>
-            <div>
-              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Entregable</div>
-              <p style="font-size: 0.875rem; color: #EDEDED;">Leads</p>
-            </div>
-            <div>
-              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Métricas</div>
-              <p style="font-size: 0.875rem; color: #EDEDED;">CPL, ROAS</p>
-            </div>
-            <div>
-              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Modelo de trabajo</div>
-              <p style="font-size: 0.875rem; color: #EDEDED;">Equipo separado que ejecuta sus campañas</p>
-            </div>
-            <div>
-              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Lado del funnel</div>
-              <p style="font-size: 0.875rem; color: #EDEDED;">Solo izquierdo</p>
-            </div>
-            <div>
-              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Qué queda cuando terminan</div>
-              <p style="font-size: 0.875rem; color: #EDEDED;">Dependencia — si la pausás, el motor se para</p>
-            </div>
+            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: #94A3B8; margin-bottom: 4px;">Alcance</div><p style="font-size: 0.875rem;">Solo adquisición</p></div>
+            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: #94A3B8; margin-bottom: 4px;">Entregable</div><p style="font-size: 0.875rem;">Leads</p></div>
+            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: #94A3B8; margin-bottom: 4px;">Métricas</div><p style="font-size: 0.875rem;">CPL, ROAS</p></div>
+            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: #94A3B8; margin-bottom: 4px;">Modelo de trabajo</div><p style="font-size: 0.875rem;">Equipo separado que ejecuta sus campañas</p></div>
+            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: #94A3B8; margin-bottom: 4px;">Lado del funnel</div><p style="font-size: 0.875rem;">Solo izquierdo</p></div>
+            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: #94A3B8; margin-bottom: 4px;">Qué queda cuando terminan</div><p style="font-size: 0.875rem;">Dependencia — si la pausás, el motor se para</p></div>
           </div>
         </div>
 
-        <div class="dash-card p-7" style="border-color: #3B82F6; box-shadow: 0 0 0 1px #3B82F6, 0 0 24px rgba(59,130,246,0.08);">
-          <div class="mono text-xs mb-5" style="color: #3B82F6; letter-spacing: 0.08em;">GRÓPERA</div>
+        <div class="card p-7" style="background: #0B3B36; border-color: #0B3B36;">
+          <div style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; color: #1FA37A; margin-bottom: 20px;">GRÓPERA</div>
           <div class="space-y-4">
-            <div>
-              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Alcance</div>
-              <p style="font-size: 0.875rem; font-weight: 600; color: #EDEDED;">Full funnel — los dos lados</p>
-            </div>
-            <div>
-              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Entregable</div>
-              <p style="font-size: 0.875rem; font-weight: 600; color: #EDEDED;">Sistema operativo de revenue</p>
-            </div>
-            <div>
-              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Métricas</div>
-              <p style="font-size: 0.875rem; font-weight: 600; color: #EDEDED;">NRR, Revenue</p>
-            </div>
-            <div>
-              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Modelo de trabajo</div>
-              <p style="font-size: 0.875rem; font-weight: 600; color: #EDEDED;">Embedded en tu equipo hasta que opera solo</p>
-            </div>
-            <div>
-              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Lado del funnel</div>
-              <p style="font-size: 0.875rem; font-weight: 600; color: #EDEDED;">Adquisición + activación + expansión</p>
-            </div>
-            <div>
-              <div class="mono text-xs mb-1" style="color: #A1A1AA;">Qué queda cuando terminan</div>
-              <p style="font-size: 0.875rem; font-weight: 600; color: #EDEDED;">Un sistema que funciona sin nosotros</p>
-            </div>
+            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: rgba(255,255,255,0.35); margin-bottom: 4px;">Alcance</div><p style="font-size: 0.875rem; font-weight: 600; color: #FFFFFF;">Full funnel — los dos lados</p></div>
+            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: rgba(255,255,255,0.35); margin-bottom: 4px;">Entregable</div><p style="font-size: 0.875rem; font-weight: 600; color: #FFFFFF;">Sistema operativo de revenue</p></div>
+            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: rgba(255,255,255,0.35); margin-bottom: 4px;">Métricas</div><p style="font-size: 0.875rem; font-weight: 600; color: #FFFFFF;">NRR, Revenue</p></div>
+            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: rgba(255,255,255,0.35); margin-bottom: 4px;">Modelo de trabajo</div><p style="font-size: 0.875rem; font-weight: 600; color: #FFFFFF;">Embedded en tu equipo hasta que opera solo</p></div>
+            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: rgba(255,255,255,0.35); margin-bottom: 4px;">Lado del funnel</div><p style="font-size: 0.875rem; font-weight: 600; color: #FFFFFF;">Adquisición + activación + expansión</p></div>
+            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: rgba(255,255,255,0.35); margin-bottom: 4px;">Qué queda cuando terminan</div><p style="font-size: 0.875rem; font-weight: 600; color: #FFFFFF;">Un sistema que funciona sin nosotros</p></div>
           </div>
         </div>
 
@@ -450,55 +396,52 @@
   </section>
 
   <!-- CTA + FORM -->
-  <section id="contacto" class="py-24 px-6 relative overflow-hidden" style="border-top: 1px solid #262626;">
-    <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(59,130,246,0.08) 0%, transparent 70%);"></div>
+  <section id="contacto" class="py-24 px-6 relative overflow-hidden" style="background: #0F172A;">
+    <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse 60% 70% at 50% 100%, rgba(31,163,122,0.08) 0%, transparent 70%);"></div>
     <div class="max-w-5xl mx-auto relative">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-        <!-- Left -->
         <div class="lg:pt-4">
-          <div class="mono text-xs mb-6 flex items-center gap-3" style="color: #3B82F6; letter-spacing: 0.08em;">
-            <span class="w-4 h-px" style="background: #3B82F6;"></span>
+          <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; color: #1FA37A; text-transform: uppercase; display: flex; align-items: center; gap: 10px; margin-bottom: 24px;">
+            <span style="display: block; width: 16px; height: 1px; background: #1FA37A; flex-shrink: 0;"></span>
             CONTACTO
           </div>
-          <h2 style="font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1;" class="mb-6">
+          <h2 style="font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; color: #FFFFFF;" class="mb-6">
             Hablemos de tu operación.
           </h2>
-          <p style="color: #A1A1AA; line-height: 1.7; font-size: 0.95rem;">
+          <p style="color: rgba(255,255,255,0.45); line-height: 1.7; font-size: 0.95rem;">
             Empezamos con un diagnóstico de 30 minutos. Sin compromiso, sin propuesta genérica — una conversación real sobre dónde está el cuello de botella en tu revenue.
           </p>
         </div>
 
-        <!-- Right — Form -->
-        <div class="dash-card p-8">
+        <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 32px;">
           <form onsubmit="handleSubmit(event)">
             <div class="space-y-4 mb-4">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label class="block mono text-xs mb-2" style="color: #A1A1AA; letter-spacing: 0.05em;">NOMBRE Y APELLIDO</label>
-                  <input type="text" name="nombre" required placeholder="Juan García"
-                    class="w-full rounded-lg px-4 py-3 text-sm">
+                  <label class="block mb-2" style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.08em; color: rgba(255,255,255,0.35); text-transform: uppercase;">NOMBRE Y APELLIDO</label>
+                  <input type="text" name="nombre" required placeholder="Juan García" class="w-full rounded-lg px-4 py-3 text-sm"
+                    style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #FFFFFF;">
                 </div>
                 <div>
-                  <label class="block mono text-xs mb-2" style="color: #A1A1AA; letter-spacing: 0.05em;">EMPRESA</label>
-                  <input type="text" name="empresa" required placeholder="Tu empresa"
-                    class="w-full rounded-lg px-4 py-3 text-sm">
+                  <label class="block mb-2" style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.08em; color: rgba(255,255,255,0.35); text-transform: uppercase;">EMPRESA</label>
+                  <input type="text" name="empresa" required placeholder="Tu empresa" class="w-full rounded-lg px-4 py-3 text-sm"
+                    style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #FFFFFF;">
                 </div>
               </div>
               <div>
-                <label class="block mono text-xs mb-2" style="color: #A1A1AA; letter-spacing: 0.05em;">MAIL</label>
+                <label class="block mb-2" style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.08em; color: rgba(255,255,255,0.35); text-transform: uppercase;">MAIL</label>
                 <input type="email" name="mail" required placeholder="juan@empresa.com"
                   pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
                   title="Ingresá un email válido (ej: nombre@empresa.com)"
-                  class="w-full rounded-lg px-4 py-3 text-sm">
+                  class="w-full rounded-lg px-4 py-3 text-sm"
+                  style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #FFFFFF;">
               </div>
             </div>
-            <button type="submit"
-              class="w-full py-3.5 rounded-lg font-semibold text-white transition-all hover:opacity-90"
-              style="background: #3B82F6; letter-spacing: -0.01em;">
+            <button type="submit" class="w-full py-3.5 rounded-lg font-semibold transition-all btn-primary" style="letter-spacing: -0.01em;">
               Hablemos de tu operación →
             </button>
-            <div id="form-success" class="hidden mt-4 text-center mono text-sm" style="color: #3B82F6;">
+            <div id="form-success" class="hidden mt-4 text-center text-sm" style="color: #1FA37A;">
               ✓ Mensaje recibido. Te contactamos pronto.
             </div>
           </form>
@@ -509,37 +452,35 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="py-8 px-6" style="border-top: 1px solid #262626;">
+  <footer class="py-8 px-6" style="background: #0F172A; border-top: 1px solid rgba(255,255,255,0.06);">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-      <span style="font-weight: 700; letter-spacing: -0.02em; color: #EDEDED;">Grópera</span>
-<p class="mono text-xs" style="color: #A1A1AA;">© 2026</p>
+      <img src="logo gropera.jpg" alt="Grópera" class="h-7">
+      <p style="font-size: 0.75rem; color: rgba(255,255,255,0.25);">© 2026 Grópera</p>
     </div>
   </footer>
 
   <!-- Mobile nav drawer -->
   <div id="mobile-menu" class="fixed inset-0 z-50 md:hidden hidden">
-    <div class="absolute inset-0" style="background: rgba(0,0,0,0.7);" onclick="toggleMenu()"></div>
-    <div class="absolute top-0 right-0 bottom-0 w-64 flex flex-col p-6" style="background: #111111; border-left: 1px solid #262626;">
-      <button onclick="toggleMenu()" class="self-end mb-8" style="color: #A1A1AA;">
+    <div class="absolute inset-0" style="background: rgba(0,0,0,0.4);" onclick="toggleMenu()"></div>
+    <div class="absolute top-0 right-0 bottom-0 w-64 flex flex-col p-6" style="background: #FFFFFF; border-left: 1px solid #E2E8F0;">
+      <button onclick="toggleMenu()" class="self-end mb-8" style="color: #64748B;">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
         </svg>
       </button>
-      <nav class="flex flex-col gap-6" style="color: #A1A1AA; font-size: 1rem;">
-        <a href="#servicios" onclick="toggleMenu()" class="hover:text-white transition-colors">Servicios</a>
-        <a href="#como-trabajamos" onclick="toggleMenu()" class="hover:text-white transition-colors">Cómo trabajamos</a>
-        <a href="#por-que" onclick="toggleMenu()" class="hover:text-white transition-colors">Por qué Grópera</a>
+      <nav class="flex flex-col gap-6" style="color: #64748B; font-size: 1rem;">
+        <a href="#servicios" onclick="toggleMenu()" class="hover:text-gray-900 transition-colors">Servicios</a>
+        <a href="#como-trabajamos" onclick="toggleMenu()" class="hover:text-gray-900 transition-colors">Cómo trabajamos</a>
+        <a href="#por-que" onclick="toggleMenu()" class="hover:text-gray-900 transition-colors">Por qué Grópera</a>
       </nav>
-      <a href="#contacto" onclick="toggleMenu()"
-        class="mt-auto w-full py-3 rounded-lg font-semibold text-white text-center transition-all hover:opacity-90"
-        style="background: #3B82F6;">
+      <a href="#contacto" onclick="toggleMenu()" class="mt-auto w-full py-3 rounded-lg font-semibold text-center transition-all btn-primary">
         Hablemos →
       </a>
     </div>
   </div>
 
   <!-- Mobile bottom CTA -->
-  <div id="mobile-cta" class="fixed bottom-0 left-0 right-0 z-40 md:hidden" style="background: #3B82F6; padding: 16px 20px; padding-bottom: max(16px, env(safe-area-inset-bottom));">
+  <div id="mobile-cta" class="fixed bottom-0 left-0 right-0 z-40 md:hidden btn-primary" style="padding: 16px 20px; padding-bottom: max(16px, env(safe-area-inset-bottom));">
     <a href="#contacto" class="block text-center font-semibold text-white" style="font-size: 0.95rem; letter-spacing: -0.01em;">
       Hablemos de tu operación →
     </a>
@@ -550,7 +491,6 @@
       document.getElementById('mobile-menu').classList.toggle('hidden');
     }
 
-    // Ocultar bottom CTA cuando el formulario de contacto es visible
     const contactSection = document.getElementById('contacto');
     const mobileCta = document.getElementById('mobile-cta');
     if (contactSection && mobileCta) {
