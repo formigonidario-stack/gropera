@@ -80,11 +80,17 @@
     [data-theme="light"] .icon-moon { display: none; }
     [data-theme="dark"] .icon-sun { display: none; }
 
-    /* Logo: light mode uses dark-wordmark JPG, dark mode uses white PNG */
-    .logo-light { display: block; }
-    .logo-dark  { display: none; }
-    [data-theme="dark"] .logo-light { display: none; }
-    [data-theme="dark"] .logo-dark  { display: block; }
+    /* Logo: siempre el nuevo. En fondos oscuros, pill blanco de fondo */
+    .logo-on-dark {
+      background: rgba(255,255,255,0.92);
+      border-radius: 8px;
+      padding: 3px 10px;
+    }
+    [data-theme="dark"] .nav-bar img {
+      background: rgba(255,255,255,0.92);
+      border-radius: 8px;
+      padding: 3px 10px;
+    }
 
     .process-cell { background: var(--bg-alt); transition: background 0.2s; }
     .process-grid { background: var(--border); }
@@ -104,8 +110,7 @@
   <nav class="nav-bar fixed top-0 left-0 right-0 z-50">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="#">
-        <img src="logo gropera.jpg" alt="Grópera" class="h-9 logo-light">
-        <img src="gropera_logo_transparent_white.png" alt="Grópera" class="h-9 logo-dark">
+        <img src="logo gropera.jpg" alt="Grópera" class="h-9">
       </a>
 
       <div class="flex items-center gap-3 md:gap-8">
@@ -484,7 +489,7 @@
   <!-- FOOTER -->
   <footer class="py-8 px-6 section-inv" style="border-top: 1px solid rgba(255,255,255,0.06);">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-      <img src="gropera_logo_transparent_white.png" alt="Grópera" class="h-7">
+      <img src="logo gropera.jpg" alt="Grópera" class="h-7 logo-on-dark">
       <p style="font-size: 0.75rem; color: rgba(255,255,255,0.25);">© 2026 Grópera</p>
     </div>
   </footer>
