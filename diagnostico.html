@@ -681,23 +681,22 @@
       document.querySelector('.progress-track').parentElement.style.display = 'none';
       window.scrollTo({ top: 0, behavior: 'smooth' });
 
-      // POST a Apps Script con text/plain para evitar preflight CORS
-      // Usamos no-cors: la respuesta es opaca pero el script se ejecuta igual
+      // POST como text/plain — evita preflight CORS y Apps Script lo recibe correctamente
       try {
-        fetch(APPS_SCRIPT_URL, {
+        var res = await fetch(APPS_SCRIPT_URL, {
           method: 'POST',
-          mode: 'no-cors',
-          body: JSON.stringify(payload)
+          headers: { 'Content-Type': 'text/plain' },
+          body: JSON.stringify(payload),
+          redirect: 'follow'
         });
-      } catch (e) {
-        // ignoramos errores de red — Apps Script ya recibió los datos
-      }
-
-      // Mostramos éxito inmediatamente (el email llega en segundos)
-      setTimeout(function() {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
         document.getElementById('step-loading').classList.remove('active');
         document.getElementById('step-success').classList.add('active');
-      }, 1500);
+      } catch (e) {
+        console.error('Error enviando al Apps Script:', e);
+        document.getElementById('step-loading').classList.remove('active');
+        document.getElementById('step-error').classList.add('active');
+      }
     }
 
     function resetForm() {
