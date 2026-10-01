@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grópera — Consultora RevOps Latinoamérica | Revenue Operations B2B</title>
-  <meta name="description" content="Grópera es la consultora RevOps para empresas B2B en Latinoamérica. Diseñamos y operamos sistemas de revenue que conectan marketing, ventas y customer success para escalar de forma predecible.">
+  <title>Grópera | Tecnología con retorno: resolvemos problemas de negocio con tecnología</title>
+  <meta name="description" content="Atraer, vender, activar, retener o expandir. Implementamos las herramientas que ya existen o desarrollamos las que hacen falta, con ROI medible: más ingresos y más eficiencia.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://gropera.com/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://gropera.com/">
-  <meta property="og:title" content="Grópera — Consultora RevOps Latinoamérica">
-  <meta property="og:description" content="Consultora RevOps para empresas B2B en Latinoamérica. Diseñamos y operamos el sistema completo de revenue: Go-to-Market, onboarding, retención y automatización.">
+  <meta property="og:title" content="Grópera | Tecnología con retorno">
+  <meta property="og:description" content="Atraer, vender, activar, retener o expandir. Implementamos las herramientas que ya existen o desarrollamos las que hacen falta, con ROI medible: más ingresos y más eficiencia.">
   <meta property="og:image" content="https://gropera.com/images/logo%20nuevo%20gropera.jpg">
   <meta property="og:locale" content="es_AR">
   <meta property="og:site_name" content="Grópera">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Grópera — Consultora RevOps Latinoamérica">
-  <meta name="twitter:description" content="Consultora RevOps para empresas B2B en Latinoamérica. Sistemas de revenue que escalan de forma predecible y autónoma.">
+  <meta name="twitter:title" content="Grópera | Tecnología con retorno">
+  <meta name="twitter:description" content="Resolvemos problemas de negocio con tecnología, hecha o a medida, con ROI medible.">
   <meta name="twitter:image" content="https://gropera.com/images/logo%20nuevo%20gropera.jpg">
 
   <!-- Structured Data -->
@@ -31,9 +31,10 @@
     "name": "Grópera",
     "url": "https://gropera.com",
     "logo": "https://gropera.com/images/logo%20nuevo%20gropera.jpg",
-    "description": "Consultora RevOps para empresas B2B en Latinoamérica. Revenue Operations, Go-to-Market, onboarding y retención.",
+    "description": "Resolvemos problemas de negocio con tecnología: implementamos herramientas existentes o desarrollamos a medida, en cualquier etapa del recorrido del cliente, con ROI medible.",
+    "slogan": "Tecnología con retorno.",
     "areaServed": "Latinoamérica",
-    "knowsAbout": ["Revenue Operations", "RevOps", "Consultora RevOps", "Go-to-Market", "Onboarding", "Retención", "CRM", "HubSpot"],
+    "knowsAbout": ["Automatización de procesos", "Desarrollo a medida", "CRM", "Analítica de datos", "Dashboards", "Paid media", "Go-to-Market", "Onboarding", "Retención", "Revenue Operations"],
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "sales",
@@ -101,6 +102,23 @@
     .process-cell { background: var(--bg-alt); transition: background 0.2s; }
     .process-grid { background: var(--border); }
 
+    .bt-m { text-align: center; font-size: 0.85rem; font-weight: 600; padding: 10px 0; border-radius: 8px; color: var(--text); }
+    .problem-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); margin-bottom: 14px; }
+    .stage-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+    .stage-num { font-size: 0.68rem; font-weight: 600; color: var(--green); }
+    .stage-name { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.07em; color: var(--text-subtle); text-transform: uppercase; }
+    .stage-title { font-weight: 700; font-size: 0.925rem; letter-spacing: -0.02em; line-height: 1.35; margin-bottom: 14px; }
+    .stage-row { font-size: 0.8rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 8px; }
+    .stage-k { display: block; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-subtle); margin-bottom: 2px; }
+    .tag-muted { font-size: 0.7rem; color: var(--text-muted); padding: 3px 0; }
+    .roi-item { display: flex; gap: 10px; align-items: baseline; color: var(--text); }
+    .roi-item::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; transform: translateY(-2px); }
+    .cmp-head { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; color: var(--text-subtle); margin-bottom: 20px; }
+    .cmp-k { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: var(--text-subtle); margin-bottom: 4px; }
+    .cmp-v { font-size: 0.875rem; }
+    .cmp-k-inv { color: rgba(255,255,255,0.35); }
+    .cmp-v-inv { font-weight: 600; color: #FFFFFF; }
+
     @media (max-width: 768px) { body { padding-bottom: 68px; } }
   </style>
 </head>
@@ -116,7 +134,8 @@
       <div class="flex items-center gap-3 md:gap-8">
         <!-- Desktop links -->
         <div class="hidden md:flex items-center gap-8 text-muted" style="font-size: 0.875rem;">
-          <a href="#servicios" class="hover:text-green-600 transition-colors" style="color: var(--text-muted);">Servicios</a>
+          <a href="#bowtie" class="transition-colors" style="color: var(--text-muted);">Dónde actuamos</a>
+          <a href="#resultados" class="transition-colors" style="color: var(--text-muted);">Retorno</a>
           <a href="#por-que" class="transition-colors" style="color: var(--text-muted);">Por qué Grópera</a>
         </div>
 
@@ -140,94 +159,71 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
         <div>
-          <div class="section-label">GROWTH OPS / REVENUE OPS</div>
+          <div class="section-label">Tecnología con retorno</div>
           <h1 style="font-size: clamp(2.5rem, 5vw, 3.75rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.03em;" class="mb-6">
-            Dejá de apagar incendios.<br>
-            <span style="color: var(--green);">Construí el sistema que hace crecer tu empresa.</span>
+            Resolvemos problemas de negocio <span style="color: var(--green);">con tecnología.</span>
           </h1>
-          <p style="color: var(--text-muted); font-size: 1.125rem; line-height: 1.7; max-width: 440px;" class="mb-10">
-            Grópera diseña, construye e implementa el ecosistema digital que conecta marketing, ventas y customer experience para que tu negocio escale de forma predecible y autónoma.
+          <p style="color: var(--text-muted); font-size: 1.125rem; line-height: 1.7; max-width: 470px;" class="mb-10">
+            Atraer, vender, activar, retener o expandir: implementamos las herramientas que ya existen o desarrollamos las que hacen falta, para que vendas más y operes con menos.
           </p>
           <div class="flex flex-col sm:flex-row gap-3">
             <a href="#contacto" class="px-7 py-3.5 rounded-lg font-semibold transition-all text-center btn-primary" style="letter-spacing: -0.01em;">
-              Hablemos de tu operación →
+              Contanos qué querés resolver →
             </a>
-            <a href="#servicios" class="px-7 py-3.5 rounded-lg font-medium text-center transition-all" style="border: 1px solid var(--border); color: var(--text-muted); letter-spacing: -0.01em;">
-              Ver servicios
+            <a href="#bowtie" class="px-7 py-3.5 rounded-lg font-medium text-center transition-all" style="border: 1px solid var(--border); color: var(--text-muted); letter-spacing: -0.01em;">
+              Dónde actuamos
             </a>
           </div>
           <div class="flex flex-col sm:flex-row flex-wrap gap-x-6 gap-y-2 mt-8" style="font-size: 0.8rem; color: var(--text-subtle);">
             <span class="flex items-center gap-2">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1FA37A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              Sin contrato de largo plazo inicial
+              ROI acordado antes de empezar
             </span>
             <span class="flex items-center gap-2">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1FA37A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              Primera sesión de diagnóstico sin costo
+              Primer resultado en menos de 90 días
             </span>
             <span class="flex items-center gap-2">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1FA37A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              Operamos con vos, no solo asesoramos
+              Hecha o a medida: la opción que más rinde
             </span>
           </div>
         </div>
 
-        <!-- Hero visual — Sistema de Revenue -->
+        <!-- Hero visual: problema -> herramienta -> dos resultados -->
         <div class="hidden lg:block">
           <div style="max-width: 440px; margin: 0 auto;">
 
-            <!-- 3 áreas fuente -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+            <div class="card p-5" style="box-shadow: var(--shadow);">
+              <div style="font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em; color: var(--text-subtle); text-transform: uppercase; margin-bottom: 8px;">El problema</div>
+              <div style="font-size: 0.95rem; font-weight: 600; color: var(--text);">"Los leads se pierden entre WhatsApp y planillas."</div>
+            </div>
+
+            <div style="display: flex; justify-content: center;"><div style="width: 1px; height: 28px; border-left: 1.5px dashed rgba(31,163,122,0.45);"></div></div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
               <div class="card p-4" style="box-shadow: var(--shadow);">
-                <div style="width: 28px; height: 28px; background: rgba(31,163,122,0.1); border-radius: 7px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1FA37A" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-                </div>
-                <div style="font-size: 0.7rem; font-weight: 600; color: var(--text);">Marketing</div>
-                <div style="font-size: 0.6rem; color: var(--text-subtle); margin-top: 2px;">Atracción</div>
+                <div style="font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em; color: var(--green); text-transform: uppercase; margin-bottom: 6px;">Herramienta hecha</div>
+                <div style="font-size: 0.78rem; color: var(--text-muted); line-height: 1.5;">CRM y WhatsApp Business configurados</div>
               </div>
               <div class="card p-4" style="box-shadow: var(--shadow);">
-                <div style="width: 28px; height: 28px; background: rgba(31,163,122,0.1); border-radius: 7px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1FA37A" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                </div>
-                <div style="font-size: 0.7rem; font-weight: 600; color: var(--text);">Ventas</div>
-                <div style="font-size: 0.6rem; color: var(--text-subtle); margin-top: 2px;">Conversión</div>
-              </div>
-              <div class="card p-4" style="box-shadow: var(--shadow);">
-                <div style="width: 28px; height: 28px; background: rgba(31,163,122,0.1); border-radius: 7px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1FA37A" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                </div>
-                <div style="font-size: 0.7rem; font-weight: 600; color: var(--text);">Customer<br>Experience</div>
-                <div style="font-size: 0.6rem; color: var(--text-subtle); margin-top: 2px;">Retención</div>
+                <div style="font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em; color: var(--green); text-transform: uppercase; margin-bottom: 6px;">A medida</div>
+                <div style="font-size: 0.78rem; color: var(--text-muted); line-height: 1.5;">Ruteo automático de cada consulta al vendedor</div>
               </div>
             </div>
 
-            <!-- Líneas de conexión convergentes -->
-            <div style="position: relative; height: 80px;">
-              <svg width="100%" height="80" style="display: block; overflow: visible;">
-                <line x1="16.6%" y1="0" x2="50%" y2="76" stroke="#1FA37A" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.35"/>
-                <line x1="50%"   y1="0" x2="50%" y2="76" stroke="#1FA37A" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.35"/>
-                <line x1="83.4%" y1="0" x2="50%" y2="76" stroke="#1FA37A" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.35"/>
-                <circle cx="50%" cy="76" r="4.5" fill="#1FA37A" opacity="0.65"/>
-              </svg>
-            </div>
+            <div style="display: flex; justify-content: center;"><div style="width: 1px; height: 28px; border-left: 1.5px dashed rgba(31,163,122,0.45);"></div></div>
 
-            <!-- Resultado del sistema -->
             <div class="card" style="padding: 24px; box-shadow: 0 8px 48px rgba(31,163,122,0.12); border-color: rgba(31,163,122,0.22);">
-              <div style="font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em; color: var(--green); text-transform: uppercase; margin-bottom: 12px;">El resultado del sistema</div>
-              <div style="font-size: 1.45rem; font-weight: 700; letter-spacing: -0.03em; color: var(--text); margin-bottom: 6px;">Ingresos predecibles</div>
-              <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 18px;">Marketing, Ventas y CS operando como un solo sistema. Sin silos, sin fricción, sin sorpresas.</div>
-              <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-top: 1px solid var(--border); padding-top: 16px;">
-                <div style="text-align: center;">
-                  <div style="font-size: 1.1rem; font-weight: 700; color: var(--green);">+34%</div>
-                  <div style="font-size: 0.58rem; color: var(--text-subtle); margin-top: 2px;">conversión</div>
+              <div style="font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em; color: var(--green); text-transform: uppercase; margin-bottom: 12px;">El retorno</div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr;">
+                <div style="padding-right: 14px;">
+                  <div style="font-size: 1.1rem; font-weight: 700; letter-spacing: -0.02em; color: var(--text);">Más ingresos</div>
+                  <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 4px; line-height: 1.5;">Más consultas convertidas en ventas</div>
                 </div>
-                <div style="text-align: center; border-left: 1px solid var(--border); border-right: 1px solid var(--border);">
-                  <div style="font-size: 1.1rem; font-weight: 700; color: var(--green);">×2.1</div>
-                  <div style="font-size: 0.58rem; color: var(--text-subtle); margin-top: 2px;">ingresos</div>
-                </div>
-                <div style="text-align: center;">
-                  <div style="font-size: 1.1rem; font-weight: 700; color: var(--green);">−58%</div>
-                  <div style="font-size: 0.58rem; color: var(--text-subtle); margin-top: 2px;">churn</div>
+                <div style="padding-left: 14px; border-left: 1px solid var(--border);">
+                  <div style="font-size: 1.1rem; font-weight: 700; letter-spacing: -0.02em; color: var(--text);">Más eficiencia</div>
+                  <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 4px; line-height: 1.5;">Menos tiempo de respuesta y trabajo manual</div>
                 </div>
               </div>
             </div>
@@ -242,190 +238,294 @@
   <!-- PROBLEM -->
   <section class="section-alt py-24 px-6" style="border-top: 1px solid var(--border);">
     <div class="max-w-5xl mx-auto">
-      <div class="section-label">EL PROBLEMA</div>
-      <h2 style="font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; letter-spacing: -0.03em; max-width: 600px;" class="mb-14">
-        Lo que pasa cuando el crecimiento no tiene sistema
+      <div class="section-label">¿Te pasa esto?</div>
+      <h2 style="font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; letter-spacing: -0.03em; max-width: 640px;" class="mb-14">
+        Problemas de negocio que se resuelven con la herramienta correcta
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <div class="card p-6 card-hover transition-all">
-          <div style="color: var(--green); font-size: 1.25rem; margin-bottom: 12px;">—</div>
-          <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.9rem;">Marketing genera leads. Ventas no los trabaja igual. Customer success no sabe qué se prometió. Tres equipos, tres versiones del negocio.</p>
+          <div class="problem-dot"></div>
+          <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.9rem;">Invertís en publicidad y no sabés qué te trae clientes.</p>
         </div>
         <div class="card p-6 card-hover transition-all">
-          <div style="color: var(--green); font-size: 1.25rem; margin-bottom: 12px;">—</div>
-          <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.9rem;">No tenés un roadmap claro de crecimiento. Sabés a dónde querés llegar, pero no cómo ni en qué orden. Cada mes es una decisión nueva.</p>
+          <div class="problem-dot"></div>
+          <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.9rem;">Los leads llegan, pero se pierden entre WhatsApp, mails y planillas.</p>
         </div>
         <div class="card p-6 card-hover transition-all">
-          <div style="color: var(--green); font-size: 1.25rem; margin-bottom: 12px;">—</div>
-          <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.9rem;">Tenés dashboards. No tenés respuestas. Los datos están, pero nadie sabe qué los mueve ni qué hacer con ellos.</p>
+          <div class="problem-dot"></div>
+          <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.9rem;">Cada vendedor vende como puede, sin proceso.</p>
         </div>
         <div class="card p-6 card-hover transition-all">
-          <div style="color: var(--green); font-size: 1.25rem; margin-bottom: 12px;">—</div>
-          <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.9rem;">Invertís en traer clientes que no activan, no expanden y se van antes del año. El funnel termina en la venta. El revenue empieza ahí.</p>
+          <div class="problem-dot"></div>
+          <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.9rem;">Los clientes compran una vez y no vuelven.</p>
         </div>
         <div class="card p-6 card-hover transition-all">
-          <div style="color: var(--green); font-size: 1.25rem; margin-bottom: 12px;">—</div>
-          <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.9rem;">Contrataste más gente, sumaste herramientas. El problema no desapareció — solo se hizo más caro y más difícil de ver.</p>
+          <div class="problem-dot"></div>
+          <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.9rem;">Hay tareas manuales que se comen horas todas las semanas.</p>
         </div>
         <div class="card p-6 card-hover transition-all">
-          <div style="color: var(--green); font-size: 1.25rem; margin-bottom: 12px;">—</div>
-          <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.9rem;">Necesitás una app, un portal o una plataforma a medida — y cada vez que lo intentás terminás con un proveedor técnico que entrega código, no soluciones.</p>
+          <div class="problem-dot"></div>
+          <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.9rem;">Tenés datos en cinco lugares y ningún número en el que confíes.</p>
+        </div>
+        <div class="card p-6 card-hover transition-all">
+          <div class="problem-dot"></div>
+          <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.9rem;">Necesitás una herramienta a medida y nadie entiende tu negocio.</p>
         </div>
         <div class="p-6 flex items-end rounded-xl" style="background: var(--bg-inv);">
-          <p style="font-weight: 600; letter-spacing: -0.02em; font-size: 0.95rem; color: #FFFFFF;">No es un problema de esfuerzo. Es un problema de sistema.</p>
+          <p style="font-weight: 600; letter-spacing: -0.02em; font-size: 0.95rem; color: #FFFFFF;">No te falta esfuerzo. Te falta la herramienta correcta, bien aplicada.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section id="servicios" class="py-24 px-6" style="border-top: 1px solid var(--border);">
+  <!-- BOWTIE -->
+  <section id="bowtie" class="py-24 px-6" style="border-top: 1px solid var(--border);">
     <div class="max-w-6xl mx-auto">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
         <div>
-          <div class="section-label">SERVICIOS</div>
-          <h2 style="font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; letter-spacing: -0.03em;">Lo que hacemos</h2>
+          <div class="section-label">Dónde actuamos</div>
+          <h2 style="font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; letter-spacing: -0.03em; max-width: 620px;">El problema puede estar en cualquier parte del recorrido de tu cliente. La solución también.</h2>
         </div>
-        <p style="color: var(--text-muted); font-size: 0.9rem; max-width: 280px; line-height: 1.6;">Cada servicio es una palanca. Juntos, forman el sistema completo.</p>
+        <p style="color: var(--text-muted); font-size: 0.9rem; max-width: 300px; line-height: 1.6;">Usamos el bowtie: el recorrido completo, desde que alguien te conoce hasta que te vuelve a comprar. No termina en la venta.</p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-
-        <!-- 01 -->
-        <div class="card p-6 card-hover transition-all flex flex-col">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
-            <span style="font-size: 0.68rem; font-weight: 600; color: var(--green);">01</span>
-            <span style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.07em; color: var(--text-subtle); text-transform: uppercase;">Punto de entrada</span>
-          </div>
-          <p style="font-size: 0.68rem; font-weight: 500; color: var(--text-subtle); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.06em;">Diagnóstico de negocio</p>
-          <h3 style="font-weight: 700; font-size: 0.925rem; letter-spacing: -0.02em; margin-bottom: 10px;">Revenue Diagnostic</h3>
-          <p style="color: var(--text-muted); font-size: 0.8rem; line-height: 1.65; flex: 1;">Antes de hacer nada, entendemos qué está pasando. Mapeamos cómo atraés y retenés clientes, e identificamos dónde se pierde dinero y qué tiene mayor impacto arreglar primero. En 30 minutos tenés un plan concreto.</p>
-          <div class="flex flex-wrap gap-1.5 mt-4">
-            <span class="tag">30 minutos</span><span class="tag">Sin costo</span><span class="tag">Plan de acción</span><span class="tag">Quick wins</span>
-          </div>
+      <!-- Diagrama bowtie -->
+      <div class="card p-6 md:p-8 mb-6" style="box-shadow: var(--shadow);">
+        <svg class="hidden md:block" viewBox="0 0 640 210" width="100%" role="img" aria-label="Bowtie: atracción, venta, onboarding, retención y expansión" style="max-width: 860px; margin: 0 auto;">
+          <defs>
+            <linearGradient id="bt-left" x1="0" x2="1" y1="0" y2="0">
+              <stop offset="0" stop-color="#1FA37A" stop-opacity="0.10"/>
+              <stop offset="1" stop-color="#1FA37A" stop-opacity="0.32"/>
+            </linearGradient>
+            <linearGradient id="bt-right" x1="0" x2="1" y1="0" y2="0">
+              <stop offset="0" stop-color="#1FA37A" stop-opacity="0.32"/>
+              <stop offset="1" stop-color="#1FA37A" stop-opacity="0.10"/>
+            </linearGradient>
+          </defs>
+          <polygon points="10,15 278,82 278,128 10,195" fill="url(#bt-left)" stroke="#1FA37A" stroke-opacity="0.35"/>
+          <polygon points="362,82 630,15 630,195 362,128" fill="url(#bt-right)" stroke="#1FA37A" stroke-opacity="0.35"/>
+          <rect x="278" y="82" width="84" height="46" rx="6" fill="#0B3B36"/>
+          <line x1="146" y1="48" x2="146" y2="162" stroke="#1FA37A" stroke-opacity="0.35" stroke-dasharray="4 4"/>
+          <line x1="494" y1="48" x2="494" y2="162" stroke="#1FA37A" stroke-opacity="0.35" stroke-dasharray="4 4"/>
+          <g font-family="Inter, sans-serif" font-weight="600" text-anchor="middle" fill="#0F172A">
+            <text x="82" y="109" font-size="15">Atracción</text>
+            <text x="214" y="109" font-size="15">Venta</text>
+            <text x="560" y="109" font-size="15">Expansión</text>
+            <text x="428" y="109" font-size="15">Retención</text>
+          </g>
+          <text x="320" y="109" font-family="Inter, sans-serif" font-size="10.5" font-weight="600" text-anchor="middle" fill="#FFFFFF">Onboarding</text>
+          <g font-family="Inter, sans-serif" font-size="11" text-anchor="middle" fill="#64748B">
+            <text x="160" y="206">Promesa de valor</text>
+            <text x="480" y="206">Cumplimiento: donde vive el revenue</text>
+          </g>
+        </svg>
+        <div class="md:hidden flex flex-col items-center gap-1.5" aria-label="Bowtie: atracción, venta, onboarding, retención y expansión">
+          <div class="bt-m" style="width: 100%; background: rgba(31,163,122,0.12);">Atracción</div>
+          <div class="bt-m" style="width: 78%; background: rgba(31,163,122,0.24);">Venta</div>
+          <div class="bt-m" style="width: 50%; background: #0B3B36; color: #FFFFFF;">Onboarding</div>
+          <div class="bt-m" style="width: 78%; background: rgba(31,163,122,0.24);">Retención</div>
+          <div class="bt-m" style="width: 100%; background: rgba(31,163,122,0.12);">Expansión</div>
+          <div style="font-size: 0.72rem; color: var(--text-subtle); margin-top: 8px; text-align: center;">Arriba la promesa de valor; abajo el cumplimiento, donde vive el revenue.</div>
         </div>
-
-        <!-- 02 -->
-        <div class="card p-6 card-hover transition-all flex flex-col">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
-            <span style="font-size: 0.68rem; font-weight: 600; color: var(--text-subtle);">02</span>
-            <span style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.07em; color: var(--text-subtle); text-transform: uppercase;">Atracción y ventas</span>
-          </div>
-          <p style="font-size: 0.68rem; font-weight: 500; color: var(--text-subtle); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.06em;">Atracción y ventas</p>
-          <h3 style="font-weight: 700; font-size: 0.925rem; letter-spacing: -0.02em; margin-bottom: 10px;">Go-to-Market & Adquisición</h3>
-          <p style="color: var(--text-muted); font-size: 0.8rem; line-height: 1.65; flex: 1;">Conectamos tu mensaje con la gente que realmente quiere lo que vendés. Definimos quién es realmente tu cliente ideal y construimos el proceso para atraerlo y convertirlo. Marketing y ventas alineados, con un flujo de clientes predecible mes a mes.</p>
-          <div class="flex flex-wrap gap-1.5 mt-4">
-            <span class="tag">Posicionamiento claro</span><span class="tag">Canal adecuado</span><span class="tag">Ventas alineadas</span><span class="tag">Flujo predecible</span>
-          </div>
+        <div class="mt-6 pt-5 text-center" style="border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--text-muted);">
+          <span style="font-weight: 600; color: var(--green);">Datos y procesos</span> atraviesan todo el recorrido: medimos cada etapa y sacamos el trabajo manual de cada una.
         </div>
-
-        <!-- 03 -->
-        <div class="card p-6 card-hover transition-all flex flex-col">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
-            <span style="font-size: 0.68rem; font-weight: 600; color: var(--text-subtle);">03</span>
-            <span style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.07em; color: var(--text-subtle); text-transform: uppercase;">Activación</span>
-          </div>
-          <p style="font-size: 0.68rem; font-weight: 500; color: var(--text-subtle); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.06em;">Activación de clientes</p>
-          <h3 style="font-weight: 700; font-size: 0.925rem; letter-spacing: -0.02em; margin-bottom: 10px;">Onboarding & Activación</h3>
-          <p style="color: var(--text-muted); font-size: 0.8rem; line-height: 1.65; flex: 1;">El momento más importante es justo después de la venta. Diseñamos el recorrido post-venta para que el cliente vea valor rápido y no pierda el impulso inicial. Cuanto antes experimente resultados, más tiempo se queda.</p>
-          <div class="flex flex-wrap gap-1.5 mt-4">
-            <span class="tag">Menos cancelaciones</span><span class="tag">Más satisfacción</span><span class="tag">Menos soporte</span><span class="tag">Time to Value</span>
-          </div>
-        </div>
-
-        <!-- 04 -->
-        <div class="card p-6 card-hover transition-all flex flex-col">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
-            <span style="font-size: 0.68rem; font-weight: 600; color: var(--text-subtle);">04</span>
-            <span style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.07em; color: var(--text-subtle); text-transform: uppercase;">Retención</span>
-          </div>
-          <p style="font-size: 0.68rem; font-weight: 500; color: var(--text-subtle); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.06em;">Retención y expansión</p>
-          <h3 style="font-weight: 700; font-size: 0.925rem; letter-spacing: -0.02em; margin-bottom: 10px;">Retención, Expansión & Pricing</h3>
-          <p style="color: var(--text-muted); font-size: 0.8rem; line-height: 1.65; flex: 1;">Retener es más barato que adquirir. Y expandir, más rentable aún. Identificamos quién está por irse antes de que se vaya, y quién está listo para comprar más. Health scoring, alertas tempranas y estrategias de upsell que funcionan.</p>
-          <div class="flex flex-wrap gap-1.5 mt-4">
-            <span class="tag">Menos churn</span><span class="tag">Más expansión</span><span class="tag">Clientes leales</span><span class="tag">Upsell & cross-sell</span>
-          </div>
-        </div>
-
-        <!-- 05 -->
-        <div class="card p-6 card-hover transition-all flex flex-col">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
-            <span style="font-size: 0.68rem; font-weight: 600; color: var(--text-subtle);">05</span>
-            <span style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.07em; color: var(--text-subtle); text-transform: uppercase;">Herramientas</span>
-          </div>
-          <p style="font-size: 0.68rem; font-weight: 500; color: var(--text-subtle); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.06em;">Implementación</p>
-          <h3 style="font-weight: 700; font-size: 0.925rem; letter-spacing: -0.02em; margin-bottom: 10px;">Revenue Operations</h3>
-          <p style="color: var(--text-muted); font-size: 0.8rem; line-height: 1.65; flex: 1;">Sin las herramientas bien configuradas, el equipo trabaja el doble para la mitad. Implementamos y conectamos las herramientas digitales de tu negocio: CRM, plataformas de marketing, soporte y automatizaciones. Nada se pierde, todo fluye entre los equipos.</p>
-          <div class="flex flex-wrap gap-1.5 mt-4">
-            <span class="tag">CRM configurado</span><span class="tag">Automatizaciones</span><span class="tag">Integraciones</span><span class="tag">HubSpot · Salesforce</span>
-          </div>
-        </div>
-
-        <!-- 06 -->
-        <div class="card p-6 card-hover transition-all flex flex-col">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
-            <span style="font-size: 0.68rem; font-weight: 600; color: var(--text-subtle);">07</span>
-            <span style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.07em; color: var(--text-subtle); text-transform: uppercase;">Estrategia</span>
-          </div>
-          <p style="font-size: 0.68rem; font-weight: 500; color: var(--text-subtle); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.06em;">Revenue Architecture</p>
-          <h3 style="font-weight: 700; font-size: 0.925rem; letter-spacing: -0.02em; margin-bottom: 10px;">Estrategia de crecimiento</h3>
-          <p style="color: var(--text-muted); font-size: 0.8rem; line-height: 1.65; flex: 1;">Saber a dónde ir antes de correr. Diseñamos la arquitectura completa de tu sistema de crecimiento: quién es tu cliente, qué propuesta de valor tenés, cómo crecés, qué métricas seguís y cómo se ve el negocio en 12 meses.</p>
-          <div class="flex flex-wrap gap-1.5 mt-4">
-            <span class="tag">Roadmap claro</span><span class="tag">Métricas definidas</span><span class="tag">Forecasting</span><span class="tag">Visión full-funnel</span>
-          </div>
-        </div>
-
-
       </div>
 
+      <!-- Etapas -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+        <div class="card p-6 card-hover transition-all flex flex-col">
+          <div class="stage-head"><span class="stage-num">01</span><span class="stage-name">Atracción</span></div>
+          <h3 class="stage-title">No llegan consultas o no sabés qué canal funciona</h3>
+          <div class="stage-row"><span class="stage-k">Hecha</span>Meta y Google Ads, SEO, GA4</div>
+          <div class="stage-row"><span class="stage-k">A medida</span>Landings y webs propias</div>
+          <div class="flex flex-wrap gap-1.5 mt-auto pt-4"><span class="tag">Ingresos</span><span class="tag-muted">Más leads, menor costo por lead</span></div>
+        </div>
+
+        <div class="card p-6 card-hover transition-all flex flex-col">
+          <div class="stage-head"><span class="stage-num">02</span><span class="stage-name">Venta</span></div>
+          <h3 class="stage-title">Los leads se pierden o no hay proceso comercial</h3>
+          <div class="stage-row"><span class="stage-k">Hecha</span>CRM, secuencias, WhatsApp Business</div>
+          <div class="stage-row"><span class="stage-k">A medida</span>Ruteo de leads, formularios integrados</div>
+          <div class="flex flex-wrap gap-1.5 mt-auto pt-4"><span class="tag">Ingresos</span><span class="tag">Eficiencia</span><span class="tag-muted">Más conversión, menos tiempo de respuesta</span></div>
+        </div>
+
+        <div class="card p-6 card-hover transition-all flex flex-col">
+          <div class="stage-head"><span class="stage-num">03</span><span class="stage-name">Onboarding</span></div>
+          <h3 class="stage-title">Cierran, pero tardan en arrancar</h3>
+          <div class="stage-row"><span class="stage-k">Hecha</span>Emails y flujos automáticos</div>
+          <div class="stage-row"><span class="stage-k">A medida</span>Portales y flujos a medida</div>
+          <div class="flex flex-wrap gap-1.5 mt-auto pt-4"><span class="tag">Ingresos</span><span class="tag">Eficiencia</span><span class="tag-muted">Menos cancelaciones, menos soporte manual</span></div>
+        </div>
+
+        <div class="card p-6 card-hover transition-all flex flex-col">
+          <div class="stage-head"><span class="stage-num">04</span><span class="stage-name">Retención</span></div>
+          <h3 class="stage-title">Compran una vez y no vuelven</h3>
+          <div class="stage-row"><span class="stage-k">Hecha</span>Email y WhatsApp marketing, encuestas</div>
+          <div class="stage-row"><span class="stage-k">A medida</span>Alertas de abandono, scoring de clientes</div>
+          <div class="flex flex-wrap gap-1.5 mt-auto pt-4"><span class="tag">Ingresos</span><span class="tag-muted">Más recompra, menos bajas</span></div>
+        </div>
+
+        <div class="card p-6 card-hover transition-all flex flex-col">
+          <div class="stage-head"><span class="stage-num">05</span><span class="stage-name">Expansión</span></div>
+          <h3 class="stage-title">No le vendés más a los que ya son clientes</h3>
+          <div class="stage-row"><span class="stage-k">Hecha</span>Campañas a la base, referidos</div>
+          <div class="stage-row"><span class="stage-k">A medida</span>Recompra automática</div>
+          <div class="flex flex-wrap gap-1.5 mt-auto pt-4"><span class="tag">Ingresos</span><span class="tag-muted">Más revenue por cliente</span></div>
+        </div>
+
+        <div class="card p-6 card-hover transition-all flex flex-col">
+          <div class="stage-head"><span class="stage-num">+</span><span class="stage-name">Datos</span></div>
+          <h3 class="stage-title">No tenés un número en el que confiar</h3>
+          <div class="stage-row"><span class="stage-k">Hecha</span>Looker Studio, GA4</div>
+          <div class="stage-row"><span class="stage-k">A medida</span>Dashboards en vivo, arquitectura de datos</div>
+          <div class="flex flex-wrap gap-1.5 mt-auto pt-4"><span class="tag">Eficiencia</span><span class="tag-muted">Horas de reporting ahorradas, decisiones más rápidas</span></div>
+        </div>
+
+        <div class="card p-6 card-hover transition-all flex flex-col">
+          <div class="stage-head"><span class="stage-num">+</span><span class="stage-name">Procesos</span></div>
+          <h3 class="stage-title">Tareas manuales que se comen horas</h3>
+          <div class="stage-row"><span class="stage-k">Hecha</span>Zapier, Make, Apps Script</div>
+          <div class="stage-row"><span class="stage-k">A medida</span>Herramientas internas, integraciones</div>
+          <div class="flex flex-wrap gap-1.5 mt-auto pt-4"><span class="tag">Eficiencia</span><span class="tag-muted">Horas y costo operativo ahorrados, menos errores</span></div>
+        </div>
+
+        <div class="p-6 rounded-xl flex flex-col justify-between" style="background: var(--green-dark);">
+          <p style="font-weight: 600; letter-spacing: -0.02em; font-size: 0.95rem; color: #FFFFFF; line-height: 1.5;">¿No sabés en qué etapa está tu problema?</p>
+          <div>
+            <p style="font-size: 0.8rem; color: rgba(255,255,255,0.6); line-height: 1.6; margin: 10px 0 16px;">Lo encontramos en el diagnóstico: recorremos tu bowtie y te decimos dónde se pierde plata o tiempo.</p>
+            <a href="#contacto" style="font-size: 0.85rem; font-weight: 600; color: #1FA37A;">Pedir diagnóstico →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ROI -->
+  <section id="resultados" class="section-alt py-24 px-6" style="border-top: 1px solid var(--border);">
+    <div class="max-w-5xl mx-auto">
+      <div class="section-label">El retorno</div>
+      <h2 style="font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; letter-spacing: -0.03em; max-width: 600px;" class="mb-4">
+        Más ingresos. Más eficiencia. O las dos.
+      </h2>
+      <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.7; max-width: 600px;" class="mb-12">
+        No vendemos horas de agencia ni líneas de código. Vendemos el problema resuelto, con un número que lo demuestra.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        <div class="card p-7">
+          <div style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; color: var(--green); margin-bottom: 8px; text-transform: uppercase;">Más ingresos</div>
+          <p style="font-size: 0.85rem; color: var(--text-subtle); margin-bottom: 18px;">Lo que la tecnología te hace ganar</p>
+          <ul class="space-y-3" style="font-size: 0.9rem;">
+            <li class="roi-item">Más consultas y leads de calidad</li>
+            <li class="roi-item">Más conversión de leads a ventas</li>
+            <li class="roi-item">Más clientes que vuelven a comprar</li>
+            <li class="roi-item">Más revenue por cliente</li>
+          </ul>
+        </div>
+        <div class="card p-7">
+          <div style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; color: var(--green); margin-bottom: 8px; text-transform: uppercase;">Más eficiencia</div>
+          <p style="font-size: 0.85rem; color: var(--text-subtle); margin-bottom: 18px;">Lo que la tecnología te hace ahorrar</p>
+          <ul class="space-y-3" style="font-size: 0.9rem;">
+            <li class="roi-item">Menos horas en tareas manuales</li>
+            <li class="roi-item">Menos tiempo de respuesta a cada consulta</li>
+            <li class="roi-item">Menos errores y retrabajo</li>
+            <li class="roi-item">Menos costo operativo y de reporting</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="p-7 rounded-xl" style="background: var(--bg-inv);">
+        <p style="font-weight: 600; letter-spacing: -0.02em; font-size: 1.05rem; color: #FFFFFF; line-height: 1.5;">Cada proyecto se justifica por su ROI.</p>
+        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.55); line-height: 1.6; margin-top: 6px;">Antes de empezar acordamos qué número vamos a mover y cuánto vale para tu negocio. Si no hay retorno claro, no lo proponemos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO TRABAJAMOS -->
+  <section id="como-trabajamos" class="py-24 px-6" style="border-top: 1px solid var(--border);">
+    <div class="max-w-5xl mx-auto">
+      <div class="section-label">Cómo trabajamos</div>
+      <h2 style="font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; letter-spacing: -0.03em; max-width: 600px;" class="mb-12">
+        Del problema al resultado, en cuatro pasos
+      </h2>
+      <div class="process-grid grid grid-cols-1 md:grid-cols-4 gap-px rounded-xl overflow-hidden" style="border: 1px solid var(--border);">
+        <div class="process-cell p-7">
+          <div style="font-size: 0.68rem; font-weight: 600; color: var(--green); margin-bottom: 14px;">01</div>
+          <h3 style="font-weight: 700; font-size: 0.95rem; letter-spacing: -0.02em; margin-bottom: 8px;">Diagnóstico</h3>
+          <p style="color: var(--text-muted); font-size: 0.82rem; line-height: 1.6;">Recorremos tu bowtie y detectamos dónde se pierde plata o tiempo.</p>
+        </div>
+        <div class="process-cell p-7">
+          <div style="font-size: 0.68rem; font-weight: 600; color: var(--green); margin-bottom: 14px;">02</div>
+          <h3 style="font-weight: 700; font-size: 0.95rem; letter-spacing: -0.02em; margin-bottom: 8px;">Propuesta con ROI</h3>
+          <p style="color: var(--text-muted); font-size: 0.82rem; line-height: 1.6;">Qué implementamos, qué desarrollamos, qué número se mueve, cuánto cuesta y en qué plazo.</p>
+        </div>
+        <div class="process-cell p-7">
+          <div style="font-size: 0.68rem; font-weight: 600; color: var(--green); margin-bottom: 14px;">03</div>
+          <h3 style="font-weight: 700; font-size: 0.95rem; letter-spacing: -0.02em; margin-bottom: 8px;">Implementación</h3>
+          <p style="color: var(--text-muted); font-size: 0.82rem; line-height: 1.6;">Configuramos, construimos y lanzamos. Con herramientas existentes o a medida.</p>
+        </div>
+        <div class="process-cell p-7">
+          <div style="font-size: 0.68rem; font-weight: 600; color: var(--green); margin-bottom: 14px;">04</div>
+          <h3 style="font-weight: 700; font-size: 0.95rem; letter-spacing: -0.02em; margin-bottom: 8px;">Medición</h3>
+          <p style="color: var(--text-muted); font-size: 0.82rem; line-height: 1.6;">Primer resultado medible antes de 90 días y seguimiento del número acordado.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- WHY GROPERA -->
-  <section id="por-que" class="py-24 px-6" style="border-top: 1px solid var(--border);">
-    <div class="max-w-5xl mx-auto">
-      <div class="section-label">POR QUÉ GRÓPERA</div>
-      <h2 style="font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; letter-spacing: -0.03em; max-width: 560px;" class="mb-4">
-        No somos un consultor. No somos una agencia.
+  <section id="por-que" class="section-alt py-24 px-6" style="border-top: 1px solid var(--border);">
+    <div class="max-w-6xl mx-auto">
+      <div class="section-label">Por qué Grópera</div>
+      <h2 style="font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; letter-spacing: -0.03em; max-width: 620px;" class="mb-4">
+        Ni solo marketing, ni solo código.
       </h2>
-      <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.7; max-width: 560px;" class="mb-16">
-        Somos el equipo que diseña, construye y opera el sistema completo de tu negocio — estrategia, adquisición, activación, retención, datos y los productos digitales que necesitás para escalar — hasta que funciona sin que nos necesités.
+      <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.7; max-width: 600px;" class="mb-14">
+        Arrancamos por el problema de tu negocio, no por la herramienta. Y lo resolvemos en cualquier etapa, con lo que ya existe o con lo que hace falta construir.
       </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <div class="card card-alt p-7">
-          <div style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; color: var(--text-subtle); margin-bottom: 20px;">CONSULTOR TRADICIONAL</div>
+          <div class="cmp-head">AGENCIA DE MARKETING</div>
           <div class="space-y-4">
-            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: var(--text-subtle); margin-bottom: 4px;">Alcance</div><p style="font-size: 0.875rem;">Solo estrategia</p></div>
-            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: var(--text-subtle); margin-bottom: 4px;">Entregable</div><p style="font-size: 0.875rem;">Presentación</p></div>
-            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: var(--text-subtle); margin-bottom: 4px;">Métricas</div><p style="font-size: 0.875rem;">Actividad</p></div>
-            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: var(--text-subtle); margin-bottom: 4px;">Modelo de trabajo</div><p style="font-size: 0.875rem;">Análisis externo, entrega y se va</p></div>
-            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: var(--text-subtle); margin-bottom: 4px;">Lado del funnel</div><p style="font-size: 0.875rem;">Ninguno</p></div>
-            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: var(--text-subtle); margin-bottom: 4px;">Qué queda cuando terminan</div><p style="font-size: 0.875rem;">Un PDF</p></div>
+            <div><div class="cmp-k">Arranca por</div><p class="cmp-v">El canal</p></div>
+            <div><div class="cmp-k">Entrega</div><p class="cmp-v">Campañas y leads</p></div>
+            <div><div class="cmp-k">Alcance</div><p class="cmp-v">Atracción</p></div>
+            <div><div class="cmp-k">Tecnología</div><p class="cmp-v">Plataformas de ads</p></div>
+            <div><div class="cmp-k">Mide</div><p class="cmp-v">CPL, ROAS</p></div>
           </div>
         </div>
-
         <div class="card card-alt p-7">
-          <div style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; color: var(--text-subtle); margin-bottom: 20px;">AGENCIA DE MARKETING</div>
+          <div class="cmp-head">DESARROLLADOR</div>
           <div class="space-y-4">
-            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: var(--text-subtle); margin-bottom: 4px;">Alcance</div><p style="font-size: 0.875rem;">Solo adquisición</p></div>
-            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: var(--text-subtle); margin-bottom: 4px;">Entregable</div><p style="font-size: 0.875rem;">Leads</p></div>
-            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: var(--text-subtle); margin-bottom: 4px;">Métricas</div><p style="font-size: 0.875rem;">CPL, ROAS</p></div>
-            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: var(--text-subtle); margin-bottom: 4px;">Modelo de trabajo</div><p style="font-size: 0.875rem;">Equipo separado que ejecuta sus campañas</p></div>
-            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: var(--text-subtle); margin-bottom: 4px;">Lado del funnel</div><p style="font-size: 0.875rem;">Solo izquierdo</p></div>
-            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: var(--text-subtle); margin-bottom: 4px;">Qué queda cuando terminan</div><p style="font-size: 0.875rem;">Dependencia — si la pausás, el motor se para</p></div>
+            <div><div class="cmp-k">Arranca por</div><p class="cmp-v">El requerimiento técnico</p></div>
+            <div><div class="cmp-k">Entrega</div><p class="cmp-v">Código</p></div>
+            <div><div class="cmp-k">Alcance</div><p class="cmp-v">Lo que se especificó</p></div>
+            <div><div class="cmp-k">Tecnología</div><p class="cmp-v">Lo que construye</p></div>
+            <div><div class="cmp-k">Mide</div><p class="cmp-v">Entrega a tiempo</p></div>
           </div>
         </div>
-
+        <div class="card card-alt p-7">
+          <div class="cmp-head">CONSULTOR</div>
+          <div class="space-y-4">
+            <div><div class="cmp-k">Arranca por</div><p class="cmp-v">El análisis</p></div>
+            <div><div class="cmp-k">Entrega</div><p class="cmp-v">Un informe</p></div>
+            <div><div class="cmp-k">Alcance</div><p class="cmp-v">Diagnóstico</p></div>
+            <div><div class="cmp-k">Tecnología</div><p class="cmp-v">No implementa</p></div>
+            <div><div class="cmp-k">Mide</div><p class="cmp-v">Nada después</p></div>
+          </div>
+        </div>
         <div class="card p-7" style="background: var(--green-dark); border-color: var(--green-dark);">
-          <div style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; color: #1FA37A; margin-bottom: 20px;">GRÓPERA</div>
+          <div class="cmp-head" style="color: #1FA37A;">GRÓPERA</div>
           <div class="space-y-4">
-            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: rgba(255,255,255,0.35); margin-bottom: 4px;">Alcance</div><p style="font-size: 0.875rem; font-weight: 600; color: #FFFFFF;">Sistema completo + producto digital</p></div>
-            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: rgba(255,255,255,0.35); margin-bottom: 4px;">Entregable</div><p style="font-size: 0.875rem; font-weight: 600; color: #FFFFFF;">Sistema que opera solo — y el producto que lo potencia</p></div>
-            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: rgba(255,255,255,0.35); margin-bottom: 4px;">Métricas</div><p style="font-size: 0.875rem; font-weight: 600; color: #FFFFFF;">Retención, expansión, revenue</p></div>
-            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: rgba(255,255,255,0.35); margin-bottom: 4px;">Modelo de trabajo</div><p style="font-size: 0.875rem; font-weight: 600; color: #FFFFFF;">Trabajamos con tu equipo hasta que funciona solo</p></div>
-            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: rgba(255,255,255,0.35); margin-bottom: 4px;">Lado del funnel</div><p style="font-size: 0.875rem; font-weight: 600; color: #FFFFFF;">Estrategia + adquisición + activación + retención + producto</p></div>
-            <div><div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: rgba(255,255,255,0.35); margin-bottom: 4px;">Qué queda cuando terminan</div><p style="font-size: 0.875rem; font-weight: 600; color: #FFFFFF;">Un sistema que funciona sin nosotros</p></div>
+            <div><div class="cmp-k cmp-k-inv">Arranca por</div><p class="cmp-v cmp-v-inv">El problema de negocio</p></div>
+            <div><div class="cmp-k cmp-k-inv">Entrega</div><p class="cmp-v cmp-v-inv">El problema resuelto</p></div>
+            <div><div class="cmp-k cmp-k-inv">Alcance</div><p class="cmp-v cmp-v-inv">Todo el bowtie, más datos y procesos</p></div>
+            <div><div class="cmp-k cmp-k-inv">Tecnología</div><p class="cmp-v cmp-v-inv">Implementa lo que existe o desarrolla lo que falta</p></div>
+            <div><div class="cmp-k cmp-k-inv">Mide</div><p class="cmp-v cmp-v-inv">ROI: ingresos y eficiencia</p></div>
           </div>
         </div>
       </div>
@@ -444,10 +544,10 @@
             CONTACTO
           </div>
           <h2 style="font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; color: #FFFFFF;" class="mb-6">
-            Hablemos de tu operación.
+            Contanos qué querés resolver.
           </h2>
           <p style="color: rgba(255,255,255,0.45); line-height: 1.7; font-size: 0.95rem;">
-            Empezamos con un diagnóstico de 30 minutos. Sin compromiso, sin propuesta genérica — una conversación real sobre dónde está el cuello de botella en tu revenue.
+            Empezamos con un diagnóstico sin costo: recorremos tu negocio, encontramos dónde se pierde plata o tiempo y te decimos si tiene retorno resolverlo.
           </p>
         </div>
 
@@ -480,9 +580,15 @@
                   class="w-full rounded-lg px-4 py-3 text-sm"
                   style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #FFFFFF;">
               </div>
+              <div>
+                <label class="block mb-2" style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.08em; color: rgba(255,255,255,0.35); text-transform: uppercase;">¿QUÉ PROBLEMA QUERÉS RESOLVER?</label>
+                <textarea name="problema" rows="3" placeholder="Ej: los leads se nos pierden entre WhatsApp y planillas"
+                  class="w-full rounded-lg px-4 py-3 text-sm"
+                  style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #FFFFFF;"></textarea>
+              </div>
             </div>
             <button type="submit" class="w-full py-3.5 rounded-lg font-semibold transition-all btn-primary" style="letter-spacing: -0.01em;">
-              Hablemos de tu operación →
+              Contanos qué querés resolver →
             </button>
             <div id="form-success" class="hidden mt-4 text-center text-sm" style="color: #1FA37A;">
               ✓ Mensaje recibido. Te contactamos pronto.
@@ -497,7 +603,7 @@
   <!-- FOOTER -->
   <footer class="py-8 px-6 section-inv" style="border-top: 1px solid rgba(255,255,255,0.06);">
     <div class="max-w-6xl mx-auto flex items-center justify-center">
-      <p style="font-size: 0.75rem; color: rgba(255,255,255,0.25);">© 2026 Grópera</p>
+      <p style="font-size: 0.75rem; color: rgba(255,255,255,0.25);">© 2026 Grópera · Tecnología con retorno.</p>
     </div>
   </footer>
 
@@ -511,7 +617,9 @@
         </svg>
       </button>
       <nav class="flex flex-col gap-6" style="color: var(--text-muted); font-size: 1rem;">
-        <a href="#servicios" onclick="toggleMenu()">Servicios</a>
+        <a href="#bowtie" onclick="toggleMenu()">Dónde actuamos</a>
+        <a href="#resultados" onclick="toggleMenu()">Retorno</a>
+        <a href="#como-trabajamos" onclick="toggleMenu()">Cómo trabajamos</a>
         <a href="#por-que" onclick="toggleMenu()">Por qué Grópera</a>
       </nav>
       <a href="#contacto" onclick="toggleMenu()" class="mt-auto w-full py-3 rounded-lg font-semibold text-center btn-primary">
@@ -523,7 +631,7 @@
   <!-- Mobile bottom CTA -->
   <div id="mobile-cta" class="fixed bottom-0 left-0 right-0 z-40 md:hidden btn-primary" style="padding: 16px 20px; padding-bottom: max(16px, env(safe-area-inset-bottom));">
     <a href="#contacto" class="block text-center font-semibold text-white" style="font-size: 0.95rem; letter-spacing: -0.01em;">
-      Hablemos de tu operación →
+      Contanos qué querés resolver →
     </a>
   </div>
 
