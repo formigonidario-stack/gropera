@@ -15,6 +15,9 @@
   .chats div{flex:1;border:1px solid #d5dce3;border-radius:10px;padding:14px;background:#e8f6f1;text-align:center}
   .chats strong{display:block;color:#0b3b36;font-size:14px;margin-bottom:4px}
   .chats span{font-size:18px;font-weight:bold;color:#1fa37a}
+  #reset{display:block;width:100%;margin:8px 0 6px;padding:12px;border:0;border-radius:10px;background:#0b3b36;color:#fff;font:bold 15px Verdana,sans-serif;cursor:pointer}
+  #reset:hover{background:#1fa37a}
+  .hint{font-size:12px;color:#5b6472;margin-top:0}
 </style>
 </head>
 <body>
@@ -26,6 +29,8 @@
     <div><strong>&larr; Izquierda</strong><span>Kommo</span></div>
     <div><strong>Derecha &rarr;</strong><span>respond.io</span></div>
   </div>
+  <button id="reset" type="button">Reiniciar chats</button>
+  <p class="hint">Borra lo que los chats guardaron en este navegador y recarga la página. Si la conversación anterior vuelve a aparecer, usá una ventana privada.</p>
   <small>Entorno de prueba. No es el sitio oficial.</small>
 </main>
 <!-- This site is converting visitors into subscribers and customers with https://respond.io -->
@@ -36,5 +41,37 @@
 <!-- https://respond.io -->
 <!-- Kommo -->
 <script>(function(a,m,o,c,r,m){a[m]={id:"1085524",hash:"40266f034a501b80ba073e6918bcc79eec41d1a0964e9d690848a2dbc86f9cf3",locale:"es",setMeta:function(p){this.params=(this.params||[]).concat([p])}};a[o]=a[o]||function(){(a[o].q=a[o].q||[]).push(arguments)};var d=a.document,s=d.createElement('script');s.async=true;s.id=m+'_script';s.src='https://gso.kommo.com/js/button.js';d.head&&d.head.appendChild(s)}(window,0,'crmPlugin',0,0,'crm_plugin'));</script>
+<script>
+document.getElementById('reset').addEventListener('click', async function () {
+  this.disabled = true; this.textContent = 'Reiniciando...';
+  try { localStorage.clear(); } catch (e) {}
+  try { sessionStorage.clear(); } catch (e) {}
+  try {
+    var host = location.hostname, parts = host.split('.');
+    var domains = ['', host, '.' + host];
+    if (parts.length > 2) domains.push('.' + parts.slice(-2).join('.'));
+    var paths = ['/', location.pathname, location.pathname.replace(/\/$/, '')];
+    document.cookie.split(';').forEach(function (c) {
+      var name = c.split('=')[0].trim();
+      if (!name) return;
+      domains.forEach(function (d) {
+        paths.forEach(function (pa) {
+          document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=' + (pa || '/') + (d ? '; domain=' + d : '');
+        });
+      });
+    });
+  } catch (e) {}
+  try {
+    if (indexedDB && indexedDB.databases) {
+      var dbs = await indexedDB.databases();
+      dbs.forEach(function (db) { if (db.name) indexedDB.deleteDatabase(db.name); });
+    }
+  } catch (e) {}
+  try {
+    if (window.caches) { var keys = await caches.keys(); await Promise.all(keys.map(function (k) { return caches.delete(k); })); }
+  } catch (e) {}
+  location.reload();
+});
+</script>
 </body>
 </html>
